@@ -69,3 +69,14 @@ de este repositorio, sus Releases y las credenciales.
   igualmente con `enabled: false` tras la republicación.
 - Pendiente tras el simulacro: tiempos medidos, orden óptimo de nodos, y cualquier
   paso manual no documentado que aparezca.
+
+## Simulacro realizado
+
+**2026-07-22** — validado de punta a punta con el nodo `mocupp-musaceas`:
+clon limpio del repo → `geopub release descargar mocupp-musaceas` (sin `--tag`:
+detecta el release más reciente del nodo) → verificación de checksums contra
+`checksums/SHA256SUMS-mocupp-musaceas.txt` → descompresión de shapefiles →
+`geopub verificar` reporta CORRECTO (EPSG:8908) → `geopub publicar --dry-run`
+reproduce todos los pasos de publicación, incluidas las instrucciones de la
+regla GeoFence. Los otros dos nodos usan exactamente el mismo mecanismo
+(releases `mocupp-cafe-v2026.07.22` y `mocupp-pastos-v2026.07.22`).

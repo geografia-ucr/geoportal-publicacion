@@ -99,6 +99,18 @@ def crear(
     return {"tag": tag, "staging": staging, "assets": assets, "comando": comando}
 
 
+def _ultimo_tag(slug: str, raiz: Path) -> str:
+    """Busca con `gh` el tag más reciente del nodo (prefijo <slug>-v)."""
+    salida = subprocess.run(
+        ["gh", "release", "list", "--json", "tagName", "--jq", ".[].tagName"],
+        check=True, cwd=raiz, capture_output=True, text=True,
+    ).stdout.split()
+    candidatos = sorted(t for t in salida if t.startswith(f"{slug}-v"))
+    if not candidatos:
+        raise ValueError(f"No hay releases publicados con prefijo {slug}-v; indique --tag")
+    return candidatos[-1]
+
+
 def descargar(nodo: dict, raiz: Path, tag: str | None = None, dry_run: bool = False) -> Path:
     """Descarga los assets del release a datos/<nodo>/ y verifica los checksums.
 
@@ -109,11 +121,13 @@ def descargar(nodo: dict, raiz: Path, tag: str | None = None, dry_run: bool = Fa
     if tag is None:
         tags = {c.get("release", {}).get("tag") for c in nodo["capas"]}
         tags.discard(None)
-        if len(tags) != 1:
-            raise ValueError(
-                f"Indique --tag: el YAML declara {len(tags)} tags distintos ({tags or 'ninguno'})"
-            )
-        tag = tags.pop()
+        if len(tags) == 1:
+            tag = tags.pop()
+        elif len(tags) > 1:
+            raise ValueError(f"Indique --tag: el YAML declara {len(tags)} tags distintos ({tags})")
+        else:
+            tag = _ultimo_tag(slug, raiz)
+            print(f"Usando el release más reciente del nodo: {tag}")
 
     destino = raiz / "datos" / slug
     comando = ["gh", "release", "download", tag, "-D", str(destino), "--clobber"]
