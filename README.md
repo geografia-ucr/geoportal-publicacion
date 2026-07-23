@@ -51,7 +51,8 @@ geopub estado                           # compara configuración vs servicios vi
 ```
 
 El flujo completo (incluidos los pasos manuales en GeoFence y en la herramienta del SNIT)
-está en [`docs/flujo-publicacion.md`](docs/flujo-publicacion.md).
+está en [`docs/flujo-publicacion.md`](docs/flujo-publicacion.md); el índice de toda la
+documentación, en [`docs/README.md`](docs/README.md).
 
 ## Requisito de CRS
 
@@ -65,6 +66,8 @@ El trabajo se gestiona mediante *pull requests* sobre `main` (protegida), con ra
 `feat/…`, `fix/…`, `docs/…`, `datos/…`, `metadatos/…` y mensajes de commit tipo
 *Conventional Commits* (`feat: agrega …`). La CI valida código (ruff, pytest),
 configuración (JSON Schema), metadatos (XML) y ausencia de secretos (gitleaks).
+Guía completa en [CONTRIBUTING.md](CONTRIBUTING.md); estado y tareas pendientes en
+[`docs/pendientes.md`](docs/pendientes.md).
 
 ## Licencia
 
