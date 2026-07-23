@@ -59,7 +59,17 @@ def crear(
     staging = Path(staging) if staging else Path(tempfile.mkdtemp(prefix=f"geopub-{tag}-"))
     staging.mkdir(parents=True, exist_ok=True)
 
-    assets = [_empaquetar_capa(capa, dir_datos, staging) for capa in nodo["capas"]]
+    assets = []
+    omitidas = []
+    for capa in nodo["capas"]:
+        if not (dir_datos / capa["archivo"]).is_file():
+            omitidas.append(capa["slug"])
+            continue
+        assets.append(_empaquetar_capa(capa, dir_datos, staging))
+    for slug_capa in omitidas:
+        print(f"AVISO: se omite {slug_capa} (sin datos en {dir_datos})")
+    if not assets:
+        raise FileNotFoundError(f"Ninguna capa del nodo tiene datos en {dir_datos}")
 
     sumas = staging / "SHA256SUMS.txt"
     lineas = [f"{sha256_archivo(a)}  {a.name}" for a in sorted(assets)]
