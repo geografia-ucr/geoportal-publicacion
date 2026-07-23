@@ -14,8 +14,12 @@ import os
 from pathlib import Path
 
 import yaml
-from dotenv import load_dotenv
 from jsonschema import Draft202012Validator
+
+try:
+    from dotenv import load_dotenv
+except ImportError:  # entornos sin python-dotenv: se usan las variables ya exportadas
+    load_dotenv = None
 
 # Defaults aplicados a cada capa cuando ni la capa ni el bloque `defaults`
 # del nodo los definen.
@@ -50,7 +54,8 @@ def raiz_repo(inicio: str | os.PathLike | None = None) -> Path:
 def cargar_env(raiz: Path | None = None) -> None:
     """Carga las variables de entorno del archivo .env de la raíz del repo."""
     raiz = Path(raiz) if raiz else raiz_repo()
-    load_dotenv(raiz / ".env")
+    if load_dotenv is not None:
+        load_dotenv(raiz / ".env")
 
 
 def cargar_global(raiz: Path | None = None) -> dict:
