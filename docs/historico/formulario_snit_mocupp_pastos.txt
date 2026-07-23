@@ -1,0 +1,34 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+FORMULARIO: Información para la publicación de un nodo en el SNIT
+Subnodo: MOCUPP - Pastos
+===========================================================================
+
+Nombre del nodo:                MOCUPP - Pastos
+Nombre de la institución:      Universidad de Costa Rica (UCR)
+Descripción del nodo:           Capas generadas por el proyecto MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en Paisajes Productivos) sobre cobertura de pastos y cobertura arbórea en paisajes productivos de pastos en Costa Rica. Incluye información anual de cobertura y análisis de pérdida y ganancia de cobertura arbórea entre periodos, con detalle de uso, categoría y área en hectáreas.
+Nombre de la persona encargada: Melvin Lizano Araya
+Correo electrónico:             geoportal@ucr.ac.cr
+Teléfono:                       25116402
+Sitio web:                      https://www.geografia.fcs.ucr.ac.cr/
+Geoservicios (URL) WMS:        https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wms
+Geoservicios (URL) WFS:        https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wfs
+Usuario para metadatos:         geoportal@ucr.ac.cr
+Visor de la institución:        https://geoportal.ucr.ac.cr/
+
+---------------------------------------------------------------------------
+Capas incluidas en el geoservicio
+---------------------------------------------------------------------------
+
+Nombre de la capa                                                                          | Capa oficial? | Fundamento legal
+-------------------------------------------------------------------------------------------|---------------|------------------
+Paisaje_cobertura_arborea_2020                                                             | No            |
+Paisaje_cobertura_arborea_2021                                                             | No            |
+Paisaje_cobertura_arborea_2022                                                             | No            |
+Paisaje_cobertura_pastos_2020                                                              | No            |
+Paisaje_cobertura_pastos_2021                                                              | No            |
+Paisaje_cobertura_pastos_2022                                                              | No            |
+Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1         | No            |
+Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2         | No            |
+Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021            | No            |
+Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022            | No            |

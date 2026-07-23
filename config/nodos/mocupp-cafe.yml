@@ -1,0 +1,198 @@
+# Nodo MOCUPP - Café
+# Configuración declarativa validable contra config/esquema-nodo.json.
+# Fuentes: publicar_mocupp_cafe.txt y metadatos/mocupp-cafe/actual/*.xml del
+# repo viejo (~/geoportal/publicacion). Un datastore GeoPackage por capa
+# (no existe datastore tipo "directorio de GeoPackage"); cada datastore lleva
+# el mismo nombre de la capa.
+
+nodo:
+  slug: mocupp-cafe
+  titulo: MOCUPP - Café
+  workspace: mocupp_cafe
+  # datastore se omite: en gpkg_por_capa cada capa tiene su propio datastore
+  # homónimo (cultivo_cafe_2021, cobertura_arborea_2021, ...).
+  datastore_tipo: gpkg_por_capa
+  responsable: INISEFOR, Universidad Nacional de Costa Rica
+  contacto: mauricio.vega.araya@una.ac.cr
+
+defaults:
+  crs_destino: EPSG:8908
+  formato: gpkg
+  licencia: CC-BY-4.0
+  destinos:
+    snit: true
+    geonode: true
+
+capas:
+  # Títulos y abstracts: exactamente los publicados en los featureTypes de
+  # GeoServer (publicar_mocupp_cafe.txt).
+  # Transformación común: ogr2ogr -nln para renombrar la capa interna del
+  # GeoPackage y quitar el sufijo _fin; los *_fin.gpkg originales quedan como
+  # fuente (solo en el repo viejo, mocupp_cafe/ está excluido de git por tamaño).
+  - slug: cultivo_cafe_2021
+    titulo: Cultivo de café 2021
+    abstract: Áreas de cultivo de café en Costa Rica para el año 2021
+    palabras_clave: [MOCUPP, Café, Costa Rica, "2021"]
+    anio: 2021
+    extension: nacional
+    habilitada: true
+    archivo: cultivo_cafe_2021.gpkg
+    sha256: 390982529d07f37f44b297cdea2a7da35203eddcfc6094a74c97a37ec8804b31
+    fuente:
+      archivo_original: cultivo_cafe_2021_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin)
+        comando: ogr2ogr -nln cultivo_cafe_2021 mocupp_cafe/cultivo_cafe_2021.gpkg mocupp_cafe/cultivo_cafe_2021_fin.gpkg
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_INISEFOR-UNA_CCAFE_2021_25KVE
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null  # TODO: XML aprobado en el SNIT, fecha exacta de aprobación no confirmada
+      geonode: null
+
+  - slug: cultivo_cafe_2022
+    titulo: Cultivo de café 2022
+    abstract: Áreas de cultivo de café en Costa Rica para el año 2022
+    palabras_clave: [MOCUPP, Café, Costa Rica, "2022"]
+    anio: 2022
+    extension: nacional
+    habilitada: true
+    archivo: cultivo_cafe_2022.gpkg
+    sha256: 8253af1a918d0584021b68766144270a353a9c704c416894b0bff14e216834ff
+    fuente:
+      archivo_original: cultivo_cafe_2022_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin)
+        comando: ogr2ogr -nln cultivo_cafe_2022 mocupp_cafe/cultivo_cafe_2022.gpkg mocupp_cafe/cultivo_cafe_2022_fin.gpkg
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_INISEFOR-UNA_CCAFE_2022_25KVE
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null  # TODO: XML aprobado en el SNIT, fecha exacta de aprobación no confirmada
+      geonode: null
+
+  - slug: cobertura_arborea_2021
+    titulo: Cobertura arbórea en paisaje de café 2021
+    abstract: Cobertura arbórea en paisajes productivos de café en Costa Rica para el año 2021
+    anio: 2021
+    extension: nacional
+    habilitada: false
+    archivo: cobertura_arborea_2021.gpkg
+    sha256: 3b27148af660db3cc21c1569ffed9490ba720a9d41bf3b2a59a4a21647aaa496
+    fuente:
+      archivo_original: cobertura_arborea_2021_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin)
+        comando: ogr2ogr -nln cobertura_arborea_2021 mocupp_cafe/cobertura_arborea_2021.gpkg mocupp_cafe/cobertura_arborea_2021_fin.gpkg
+    destinos:
+      snit: false
+      geonode: true
+    metadatos:
+      estado: no-aplica  # sin metadatos SNIT
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null
+      geonode: null
+    notas: >-
+      Deshabilitada en GeoServer (enabled=false) desde 2026-07-20: no se sirve
+      por WFS/WMS ni aparece en GetCapabilities, pero el featureType y el
+      datastore siguen configurados. Reactivar con
+      PUT {"featureType":{"enabled":true}}.
+
+  - slug: cobertura_arborea_2022
+    titulo: Cobertura arbórea en paisaje de café 2022
+    abstract: Cobertura arbórea en paisajes productivos de café en Costa Rica para el año 2022
+    anio: 2022
+    extension: nacional
+    habilitada: false
+    archivo: cobertura_arborea_2022.gpkg
+    sha256: f850da9cc42caef79a8a97bbf08fe6b7d1c8a28e2a5c898178ddab43e08c0649
+    fuente:
+      archivo_original: cobertura_arborea_2022_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin)
+        comando: ogr2ogr -nln cobertura_arborea_2022 mocupp_cafe/cobertura_arborea_2022.gpkg mocupp_cafe/cobertura_arborea_2022_fin.gpkg
+    destinos:
+      snit: false
+      geonode: true
+    metadatos:
+      estado: no-aplica  # sin metadatos SNIT
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null
+      geonode: null
+    notas: >-
+      Deshabilitada en GeoServer (enabled=false) desde 2026-07-20: no se sirve
+      por WFS/WMS ni aparece en GetCapabilities, pero el featureType y el
+      datastore siguen configurados. Reactivar con
+      PUT {"featureType":{"enabled":true}}.
+
+  - slug: perdida_ganancia_cultivo_cafe
+    titulo: Pérdida y ganancia de cultivo de café
+    abstract: Análisis de pérdida y ganancia de áreas de cultivo de café en Costa Rica
+    palabras_clave: [MOCUPP, Café, Cobertura arbórea, Pérdida Cobertura arbórea,
+                     Ganancia Cobertura arbórea, Costa Rica]
+    anio: "2021-2022"
+    extension: nacional
+    habilitada: true
+    archivo: perdida_ganancia_cultivo_cafe.gpkg
+    sha256: a2e0ead20f1b0fcd66a87ab2a36c7093d21a93d776883ba4efd46a0b5350b7ab
+    fuente:
+      archivo_original: perdida_ganancia_cultivo_cafe_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin)
+        comando: ogr2ogr -nln perdida_ganancia_cultivo_cafe mocupp_cafe/perdida_ganancia_cultivo_cafe.gpkg mocupp_cafe/perdida_ganancia_cultivo_cafe_fin.gpkg
+    metadatos:
+      estado: publicado
+      # El identificador en el XML aprobado dice "2021-2021" (sic), se registra tal cual:
+      identificador_snit: CR_INISEFOR-UNA_PGCCAFES_2021-2021_25KVE
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null  # TODO: XML aprobado en el SNIT, fecha exacta de aprobación no confirmada
+      geonode: null
+
+  - slug: perdida_cobertura_arborea
+    titulo: Pérdida de cobertura arbórea en paisaje de café
+    abstract: Pérdida de cobertura arbórea en paisajes productivos de café en Costa Rica
+    palabras_clave: [MOCUPP, Café, Cobertura arbórea, Cambio de cobertura arbórea,
+                     Pérdida de cobertura arbórea, Costa Rica, "2021-2022"]
+    anio: "2021-2022"
+    extension: nacional
+    habilitada: true
+    archivo: perdida_cobertura_arborea.gpkg
+    sha256: fd7d620bc66e50bb9c4a82c91a2592e19c10b1f6b04230b9bcfd5fc52a399d24
+    fuente:
+      archivo_original: Perdida_cobertura_arborea_fin.gpkg
+      ubicacion: ~/geoportal/publicacion/mocupp_cafe/ (solo local, excluido de git)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: Renombrado del archivo y de la capa interna (quita el sufijo _fin y pasa a minúsculas)
+        comando: ogr2ogr -nln perdida_cobertura_arborea mocupp_cafe/perdida_cobertura_arborea.gpkg mocupp_cafe/Perdida_cobertura_arborea_fin.gpkg
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_INISEFOR_UNA_PER_COARB_CAFÉ_2021-2022_25K_VE
+    publicado:
+      geoserver: "2026-03-04"
+      snit: null  # TODO: corregida en el editor del SNIT y promovida a actual/ el 2026-06-23; fecha de aprobación final no confirmada
+      geonode: null
+    notas: >-
+      Metadatos corregidos en la herramienta en línea del SNIT tras la revisión
+      de 2026-06 y promovidos a metadatos/mocupp-cafe/actual/ el 2026-06-23.

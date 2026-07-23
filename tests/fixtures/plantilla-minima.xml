@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata
+    xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+    xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0">
+  <mdb:prueba>
+    <gco:CharacterString>{{TITULO}}</gco:CharacterString>
+    <gco:CharacterString>{{RESUMEN}}</gco:CharacterString>
+    <gco:CharacterString>{{CRS}}</gco:CharacterString>
+    <gco:CharacterString>{{IDENTIFICADOR}}</gco:CharacterString>
+  </mdb:prueba>
+</mdb:MD_Metadata>

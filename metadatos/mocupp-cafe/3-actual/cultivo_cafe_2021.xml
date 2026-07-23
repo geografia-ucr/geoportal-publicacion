@@ -1,0 +1,686 @@
+<mdb:MD_Metadata
+	xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+	xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
+	xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+	xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+	xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
+	xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+	xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+	xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+	xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+	xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+	xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
+	xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+	xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+	xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+	xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+	xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+	xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+	xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
+	xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+	xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+	xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+	xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>CR_INISEFOR-UNA_CCAFE_2021_25KVE</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <lan:PT_Locale id="ES">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="Español"/>
+      </lan:language>
+      <lan:country>
+        <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="ISO 3166-2-CR"/>
+      </lan:country>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/>
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Clase o tipo de objeto geográfico"/>
+      </mdb:resourceScope>
+      <mdb:name gco:nilReason="missing">
+        <gco:CharacterString/>
+      </mdb:name>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>INISEFOR, Universidad Nacional de Costa Rica</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:electronicMailAddress gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Manuel Vargas</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>Universidad de Costa Rica, Sede Rodrigo Facio
+Facultad de Ciencias Sociales, Ciudad de la Investigación
+Segundo piso, torre D y E
+Montes de Oca, 2060 San José. Costa Rica</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>San Pedro</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>San José</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>11501</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Costa Rica</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                  <cit:hoursOfService>
+                    <gco:CharacterString>Lunes a viernes de 8:00 a.m. a 4:00 p.m.</gco:CharacterString>
+                  </cit:hoursOfService>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:positionName>
+                <gco:CharacterString>Académico</gco:CharacterString>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  
+              <mdb:dateInfo>
+                <cit:CI_Date>
+                    <cit:date>
+                        <gco:DateTime>04/06/2026</gco:DateTime>
+                    </cit:date>
+                    <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation"/>
+                    </cit:dateType>
+                </cit:CI_Date>
+            </mdb:dateInfo>
+
+  <mdb:metadataStandard
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>NTIG_CR04_10.2020. V.2</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataLinkage
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString/>
+      </cit:linkage>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata"/>
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:metadataLinkage
+    xmlns:geonet="http://www.fao.org/geonetwork"/>
+    <mdb:metadataLinkage
+      xmlns:geonet="http://www.fao.org/geonetwork">
+      <cit:CI_OnlineResource>
+        <cit:linkage>
+          <gco:CharacterString></gco:CharacterString>
+        </cit:linkage>
+        <cit:function>
+          <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata"/>
+        </cit:function>
+      </cit:CI_OnlineResource>
+    </mdb:metadataLinkage>
+      <mdb:spatialRepresentationInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <msr:MD_VectorSpatialRepresentation>
+          <msr:scope/>
+          <msr:topologyLevel>
+            <msr:MD_TopologyLevelCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopologyLevelCode" codeListValue="Solo geometría"/>
+          </msr:topologyLevel>
+          <msr:geometricObjects>
+            <msr:MD_GeometricObjects>
+              <msr:geometricObjectType>
+                <msr:MD_GeometricObjectTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_GeometricObjectTypeCode" codeListValue="Superficie"/>
+              </msr:geometricObjectType>
+              <msr:geometricObjectCount>
+                <gco:Integer>20074</gco:Integer>
+              </msr:geometricObjectCount>
+            </msr:MD_GeometricObjects>
+          </msr:geometricObjects>
+          <msr:geometricObjects/>
+        </msr:MD_VectorSpatialRepresentation>
+      </mdb:spatialRepresentationInfo>
+      <mdb:referenceSystemInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrs:MD_ReferenceSystem>
+          <mrs:referenceSystemIdentifier>
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gco:CharacterString>EPSG:8908</gco:CharacterString>
+              </mcc:code>
+            </mcc:MD_Identifier>
+          </mrs:referenceSystemIdentifier>
+          <mrs:referenceSystemType>
+            <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="Proyectada"/>
+          </mrs:referenceSystemType>
+        </mrs:MD_ReferenceSystem>
+      </mdb:referenceSystemInfo>
+      <mdb:identificationInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mri:MD_DataIdentification>
+          <mri:citation>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Cultivo de café en Costa Rica 2021 a escala 1:25.000</gco:CharacterString>
+              </cit:title>
+              <cit:alternateTitle>
+                <gco:CharacterString>INISEFOR-UNA_CCFE_2021_25K</gco:CharacterString>
+              </cit:alternateTitle>
+
+                          <mdb:dateInfo>
+                <cit:CI_Date>
+                    <cit:date>
+                        <gco:DateTime>04/04/2026</gco:DateTime>
+                    </cit:date>
+                    <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication"/>
+                    </cit:dateType>
+                </cit:CI_Date>
+            </mdb:dateInfo>
+
+              <cit:edition>
+                <gco:CharacterString>1 Edición</gco:CharacterString>
+              </cit:edition>
+              <cit:editionDate>
+                <gco:DateTime>06/04/2026</gco:DateTime>
+              </cit:editionDate>
+              <cit:identifier/>
+              <cit:presentationForm>
+                <cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_PresentationFormCode" codeListValue="Mapa digital"/>
+              </cit:presentationForm>
+            </cit:CI_Citation>
+          </mri:citation>
+          <mri:abstract>
+            <gco:CharacterString>El café, introducido en Costa Rica a finales del siglo XVIII y consolidado como pilar económico desde 1821, ha sido históricamente vital para el país. 
+Mediante el sistema de Monitoreo del Cambio de Uso y Cobertura del Suelo en Paisajes Productivos (MOCUPP) genera información actualizada sobre los cambios en el uso del suelo y la cobertura terrestre en paisajes productivos, a partir del análisis de imágenes satelitales y aplicando técnicas de teledetección. Esta información permite monitorear las transformaciones del territorio, verificar las áreas de cultivos que se encuentra libres de pérdida de cobertura arbórea y además, apoya la planificación y gestión sostenible de los paisajes productivos. 
+Los resultados del monitoreo del área de café en Costa Rica para el año 2021, representa 82616,7 hectáreas que equivale al 1.6% del territorio nacional</gco:CharacterString>
+          </mri:abstract>
+          <mri:purpose>
+            <gco:CharacterString>Determinar el área correspondiente al cultivo de café a nivel nacional</gco:CharacterString>
+          </mri:purpose>
+          <mri:credit>
+            <gco:CharacterString>Autores y equipo de trabajo: Cristian Aguilar-Barboza, Mauricio Vega-Araya, Nicole Obando Morán, Karina Sevilla Segura y Priscilla Rigg Aguilar, INISEFOR, Universidad Nacional. 
+Con apoyo en campo del Instituto del Café de Costa Rica (ICAFE)</gco:CharacterString>
+          </mri:credit>
+          <mri:status>
+            <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="Completo"/>
+          </mri:status>
+          <mri:pointOfContact>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>INISEFOR, Universidad Nacional de Costa Rica</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Mauricio Vega Araya</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                                      <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) 2562-4600</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:deliveryPoint>
+                                <gco:CharacterString>Santa Lucía, Barva</gco:CharacterString>
+                              </cit:deliveryPoint>
+                              <cit:city>
+                                <gco:CharacterString>Santa Lucía, Barva</gco:CharacterString>
+                              </cit:city>
+                              <cit:administrativeArea>
+                                <gco:CharacterString>Heredia</gco:CharacterString>
+                              </cit:administrativeArea>
+                              <cit:postalCode>
+                                <gco:CharacterString>40205</gco:CharacterString>
+                              </cit:postalCode>
+                              <cit:country>
+                                <gco:CharacterString>Costa Rica</gco:CharacterString>
+                              </cit:country>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>mauricio.vega.araya@una.ac.cr</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:hoursOfService>
+                            <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                          </cit:hoursOfService>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:positionName>
+                        <gco:CharacterString>Académico</gco:CharacterString>
+                      </cit:positionName>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+              <cit:party>
+                <cit:CI_Individual>
+                  <cit:name gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                </cit:CI_Individual>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </mri:pointOfContact>
+          <mri:spatialRepresentationType>
+            <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="Vector"/>
+          </mri:spatialRepresentationType>
+          <mri:spatialResolution>
+            <mri:MD_Resolution>
+              <mri:equivalentScale>
+                <mri:MD_RepresentativeFraction>
+                  <mri:denominator>
+                    <gco:Integer>25000</gco:Integer>
+                  </mri:denominator>
+                </mri:MD_RepresentativeFraction>
+              </mri:equivalentScale>
+            </mri:MD_Resolution>
+          </mri:spatialResolution>
+          <mri:topicCategory>
+            <mri:MD_TopicCategoryCode>Cobertura de la tierra con mapas básicos e imágenes</mri:MD_TopicCategoryCode>
+          </mri:topicCategory>
+          <mri:extent>
+            <gex:EX_Extent>
+              <gex:geographicElement>
+                <gex:EX_GeographicBoundingBox>
+                  <gex:westBoundLongitude>
+                    <gco:Decimal>-87.40</gco:Decimal>
+                  </gex:westBoundLongitude>
+                  <gex:eastBoundLongitude>
+                    <gco:Decimal>-82.30</gco:Decimal>
+                  </gex:eastBoundLongitude>
+                  <gex:southBoundLatitude>
+                    <gco:Decimal>5.20</gco:Decimal>
+                  </gex:southBoundLatitude>
+                  <gex:northBoundLatitude>
+                    <gco:Decimal>11.50</gco:Decimal>
+                  </gex:northBoundLatitude>
+                </gex:EX_GeographicBoundingBox>
+              </gex:geographicElement>
+              <gex:temporalElement/>
+            </gex:EX_Extent>
+          </mri:extent>
+          <mri:extent>
+            <gex:EX_Extent>
+              <gex:geographicElement/>
+            </gex:EX_Extent>
+          </mri:extent>
+          <mri:extent>
+            <gex:EX_Extent/>
+          </mri:extent>
+          <mri:resourceMaintenance>
+            <mmi:MD_MaintenanceInformation>
+              <mmi:maintenanceAndUpdateFrequency>
+                <mmi:MD_MaintenanceFrequencyCode codeListValue="No planificado" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode"/>
+              </mmi:maintenanceAndUpdateFrequency>
+            </mmi:MD_MaintenanceInformation>
+          </mri:resourceMaintenance>
+          <mri:graphicOverview>
+            <mcc:MD_BrowseGraphic>
+              <mcc:fileName>
+                <gco:CharacterString>https://www.snitcr.go.cr/Tramites/vf?k=dXBsb2FkOjoxNzc4NjA2NzI3</gco:CharacterString>
+              </mcc:fileName>
+              <mcc:fileDescription>
+                <gco:CharacterString>Área de café a nivel nacional para el año 2021</gco:CharacterString>
+              </mcc:fileDescription>
+            </mcc:MD_BrowseGraphic>
+          </mri:graphicOverview>
+          
+
+                        <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>MOCUPP</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Café</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="product" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Costa Rica</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>2021</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="temporal" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+
+
+
+          <mri:resourceConstraints>
+            <mco:MD_LegalConstraints>
+              <mco:useLimitation gco:nilReason="missing">
+                <gco:CharacterString/>
+              </mco:useLimitation>
+              <mco:accessConstraints>
+                <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"/>
+              </mco:accessConstraints>
+              <mco:useConstraints>
+                <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"/>
+              </mco:useConstraints>
+              <mco:otherConstraints>
+                <gco:CharacterString>Su uso tendrá carácter libre y gratuito, siempre que se mencione el origen y propiedad de los datos.</gco:CharacterString>
+              </mco:otherConstraints>
+            </mco:MD_LegalConstraints>
+          </mri:resourceConstraints>
+          <mri:defaultLocale>
+            <lan:PT_Locale>
+              <lan:language>
+                <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="Español"/>
+              </lan:language>
+              <lan:country>
+                <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="ISO 3166-2-CR"/>
+              </lan:country>
+              <lan:characterEncoding>
+                <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/>
+              </lan:characterEncoding>
+            </lan:PT_Locale>
+          </mri:defaultLocale>
+          <mri:supplementalInformation>
+            <gco:CharacterString>Áreas cubiertas por cultivo de café (con y sin sombra) en Costa Rica para el año 2021, generadas mediante un flujo automatizado de teledetección con Sentinel-1 (SAR) y Sentinel-2 (óptico) procesado en Google Earth Engine, y clasificación supervisada mediante redes neuronales profundas, con posprocesamiento orientado a objetos (OBIA) y revisión manual para depurar errores. Se establece un tamaño mínimo mapeable de 0,2 ha, por lo que parches menores pueden no representarse y los límites responden a la resolución de los insumos (principalmente 10 m). Debido a estas limitaciones, el polígono puede integrar elementos del paisaje productivo difíciles de discriminar a dicha resolución (p. ej., caminos internos, cercas vivas y pequeñas infraestructuras). La calidad del mapeo fue evaluada mediante muestreo aleatorio estratificado y fotointerpretación por personal técnico del ICAFE con insumos de mayor resolución, estimándose para 2021 un área de 82.623,6 ha con IC95% ± 1005 ha y un desempeño global alto (Precisión global 94,6%; Kappa 92,2%). El producto está orientado a monitoreo y análisis territorial y no debe usarse para delimitación parcelaria/catastral.</gco:CharacterString>
+          </mri:supplementalInformation>
+        </mri:MD_DataIdentification>
+      </mdb:identificationInfo>
+      <mdb:distributionInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrd:MD_Distribution>
+
+
+                          <mrd:distributionFormat>
+                <mrd:MD_Format>
+                  <mrd:formatSpecificationCitation>
+                    <cit:CI_Citation>
+                      <cit:title>
+                        <gco:CharacterString>ESRI Shapefile</gco:CharacterString>
+                      </cit:title>
+                    </cit:CI_Citation>
+                  </mrd:formatSpecificationCitation>
+                </mrd:MD_Format>
+              </mrd:distributionFormat>
+
+
+          <mrd:transferOptions>
+            <mrd:MD_DigitalTransferOptions>
+              
+                          <mrd:onLine>
+                <cit:CI_OnlineResource>
+                    <cit:linkage>
+                        <gco:CharacterString>https://geoportal.ucr.ac.cr/geoserver/mocupp_cafe/wms</gco:CharacterString>
+                    </cit:linkage>
+                    <cit:protocol>
+                        <gco:CharacterString>OGC-WMS Web Map Service </gco:CharacterString>
+                    </cit:protocol>
+                    <cit:name>
+                        <gco:CharacterString>cultivo_cafe_2021</gco:CharacterString>
+                    </cit:name>
+                    <cit:description>
+                        <gco:CharacterString>Área correspondiente al cultivo de café, a nivel nacional. El cual se concentra en las regiones según MIDEPLAN: Región Central, Brunca, Pacífico Central, Chorotega, Huetar Caribe y Huetar Norte</gco:CharacterString>
+                    </cit:description>
+                    <cit:function>
+                        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information"/>
+                    </cit:function>
+                </cit:CI_OnlineResource>
+            </mrd:onLine>
+
+            </mrd:MD_DigitalTransferOptions>
+          </mrd:transferOptions>
+        </mrd:MD_Distribution>
+      </mdb:distributionInfo>
+      <mdb:dataQualityInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mdq:DQ_DataQuality>
+          <mdq:scope>
+            <mcc:MD_Scope>
+              <mcc:level>
+                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Clase o tipo de objeto geográfico"/>
+              </mcc:level>
+            </mcc:MD_Scope>
+          </mdq:scope>
+        </mdq:DQ_DataQuality>
+      </mdb:dataQualityInfo>
+      <mdb:resourceLineage
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrl:LI_Lineage>
+          <mrl:statement>
+            <gco:CharacterString>El conjunto de datos corresponde al mapeo del parque cafetalero de Costa Rica para el año 2021, elaborado en el marco del proceso MOCUPP Café con el propósito de delimitar y estimar la extensión nacional del cultivo para fines de monitoreo, gestión territorial y trazabilidad. La cobertura se generó mediante un flujo automatizado de teledetección basado en Sentinel-1 (SAR) y Sentinel-2 (óptico), integrando covariables espectrales, texturas (GLCM) y componentes principales (PCA) procesadas en Google Earth Engine, y clasificadas con redes neuronales profundas; posteriormente se aplicó posprocesamiento orientado a objetos (OBIA) y suavizado por moda, seguido de una revisión manual en QGIS para depurar errores de comisión y omisión. El mapeo define como “cultivo de café” las áreas con tamaño mínimo mapeable de 0,2 ha, incluyendo patrones bajo condiciones variables de sombra, y se construyó con cobertura nacional y desglose por regiones cafetaleras definidas por ICAFE. La calidad del producto fue evaluada mediante muestreo aleatorio estratificado (Olofsson et al., 2014) con 1237 puntos de validación para la clase café, fotointerpretados por personal técnico del ICAFE con apoyo de imágenes de mayor resolución (p. ej., PlanetScope/NICFI y Google Earth) y análisis estadístico con intervalos de confianza al 95%; para 2021 se estimó un área de 82.623,6 ha (IC95% ± 1005 ha; incertidumbre 1,22%), con métricas robustas para la clase café (precisión de productor 0,95; precisión de usuario 0,87; F1-score 0,96) y desempeño global del modelo (precisión global 94,6% y Kappa 92,2%).</gco:CharacterString>
+          </mrl:statement>
+          <mrl:scope/>
+        </mrl:LI_Lineage>
+      </mdb:resourceLineage>
+      <mdb:resourceLineage
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrl:LI_Lineage/>
+      </mdb:resourceLineage>
+      <mdb:metadataMaintenance
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mmi:MD_MaintenanceInformation>
+          <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="No planificado"/>
+          </mmi:maintenanceAndUpdateFrequency>
+          <mmi:maintenanceDate>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date></gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue=""/>
+              </cit:dateType>
+            </cit:CI_Date>
+          </mmi:maintenanceDate>
+        </mmi:MD_MaintenanceInformation>
+      </mdb:metadataMaintenance>
+      <mdb:acquisitionInformation
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mac:MI_AcquisitionInformation>
+          <mac:scope>
+            <mcc:MD_Scope>
+              <mcc:level>
+                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue=""/>
+              </mcc:level>
+            </mcc:MD_Scope>
+          </mac:scope>
+        </mac:MI_AcquisitionInformation>
+      </mdb:acquisitionInformation>
+    </mdb:MD_Metadata>

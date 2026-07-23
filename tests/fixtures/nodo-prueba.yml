@@ -1,0 +1,37 @@
+# Nodo de prueba para los tests (no corresponde a datos reales).
+nodo:
+  slug: nodo-prueba
+  titulo: "Nodo de prueba"
+  workspace: nodo_prueba
+  datastore: nodo_prueba
+  datastore_tipo: shapefile_dir
+  responsable: "Escuela de Geografía, Universidad de Costa Rica"
+  contacto: "Persona de Prueba"
+
+defaults:
+  crs_destino: EPSG:8908
+  formato: shapefile
+  destinos:
+    snit: true
+    geonode: false
+
+capas:
+  - slug: capa_prueba
+    titulo: "Capa de prueba 2021"
+    abstract: "Resumen de la capa de prueba, generada para los tests."
+    palabras_clave:
+      - Prueba
+      - Costa Rica
+    anio: 2021
+    archivo: capa_prueba.shp
+    metadatos:
+      estado: borrador
+      identificador_snit: CR_EG-UCR_PRUEBA_2021_10KVE
+
+  - slug: capa_gpkg
+    titulo: "Capa GPKG de prueba"
+    formato: gpkg
+    archivo: capa_gpkg.gpkg
+    habilitada: false
+    destinos:
+      geonode: true

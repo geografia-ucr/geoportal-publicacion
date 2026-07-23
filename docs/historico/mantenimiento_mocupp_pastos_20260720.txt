@@ -1,0 +1,94 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+# Mantenimiento del workspace mocupp_pastos — 2026-07-20
+#
+# Dos operaciones realizadas vía REST API (sin tocar datos ni datastore):
+#
+# 1. DESHABILITAR las 10 capas regionales de la región Brunca
+#    (a pedido del usuario; igual que las 2 capas de café deshabilitadas antes).
+#    Quedan activas solo las 5 capas nacionales (*_cr_*).
+#    Los featureTypes y el datastore siguen configurados: para reactivar una capa
+#    basta un PUT con {"featureType":{"enabled":true}}.
+#    OJO: los metadatos SNIT de las 10 regionales (enviados a revisión el 2026-07-02)
+#    apuntan a la distribución WFS/WMS de mocupp_pastos.
+#
+# 2. AGREGAR DESCRIPCIÓN (campo "Resumen" en la interfaz de GeoServer = campo
+#    "abstract" del featureType) a las 5 capas nacionales, a solicitud del SNIT.
+#    Se usó el patrón corto de las capas regionales:
+#    "<Título> para el año/período X, generada por el proyecto MOCUPP (Monitoreo
+#    del Cambio de Uso y Cobertura de la Tierra en Paisajes Productivos). La capa
+#    contiene polígonos con información de <atributos reales>."
+#    Los atributos se verificaron con DescribeFeatureType:
+#    - Coberturas (pastos y arbórea): clase, región, año, área en hectáreas
+#      (Clase, Region, Ano, Area_ha).
+#    - Pérdida-ganancia: código, tipo de pérdida o ganancia, cobertura por año,
+#      región y área (codigo, tipo_pe, cober_2021, cober_2022, region, Shape_Area).
+#
+# Verificación final: GetCapabilities del WFS público solo anuncia las 5 capas
+# nacionales, cada una con su wfs:Abstract.
+
+# ------------------------------------------------------------------
+# 1. Deshabilitar las 10 capas regionales de la Brunca
+# ------------------------------------------------------------------
+
+for l in \
+  Paisaje_cobertura_pastos_2020 Paisaje_cobertura_pastos_2021 Paisaje_cobertura_pastos_2022 \
+  Paisaje_cobertura_arborea_2020 Paisaje_cobertura_arborea_2021 Paisaje_cobertura_arborea_2022 \
+  Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1 \
+  Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2 \
+  Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021 \
+  Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022; do
+  # El href del recurso se obtiene de /rest/layers/<ws>:<capa>.json
+  url=$(curl -s -u admin:$GEOSERVER_PASSWORD \
+    "https://geoportal.ucr.ac.cr/geoserver/rest/layers/mocupp_pastos:$l.json" \
+    | python3 -c "import sys,json; print(json.load(sys.stdin)['layer']['resource']['href'])")
+  curl -s -o /dev/null -w "$l -> HTTP %{http_code}\n" -u admin:$GEOSERVER_PASSWORD -XPUT \
+    -H "Content-type: application/json" -d '{"featureType":{"enabled":false}}' "$url"
+done
+
+# ------------------------------------------------------------------
+# 2. Descripción (abstract) de las 5 capas nacionales
+# ------------------------------------------------------------------
+# PUT al featureType con {"featureType":{"abstract":"<descripción>"}}.
+# Textos finales:
+
+# cobertura_pastos_cr_2021:
+#   Cobertura de pastos en Costa Rica para el año 2021, generada por el proyecto
+#   MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en Paisajes
+#   Productivos). La capa contiene polígonos con información de clase, región,
+#   año y área en hectáreas.
+#
+# cobertura_pastos_cr_2022: ídem, año 2022.
+#
+# cobertura_arborea_pastos_cr_2021:
+#   Cobertura arbórea sobre paisaje productivo de pastos en Costa Rica para el
+#   año 2021, generada por el proyecto MOCUPP (...). La capa contiene polígonos
+#   con información de clase, región, año y área en hectáreas.
+#
+# cobertura_arborea_pastos_cr_2022: ídem, año 2022.
+#
+# perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022:
+#   Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos
+#   en Costa Rica para el período 2021-2022, generada por el proyecto MOCUPP
+#   (...). La capa contiene polígonos con información de código, tipo de pérdida
+#   o ganancia, cobertura por año, región y área.
+
+# Ejemplo (una capa; repetir con cada typeName y su texto):
+url=$(curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/layers/mocupp_pastos:cobertura_pastos_cr_2021.json" \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['layer']['resource']['href'])")
+curl -s -u admin:$GEOSERVER_PASSWORD -XPUT \
+  -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"abstract":"Cobertura de pastos en Costa Rica para el año 2021, generada por el proyecto MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en Paisajes Productivos). La capa contiene polígonos con información de clase, región, año y área en hectáreas."}}' \
+  "$url"
+
+# ------------------------------------------------------------------
+# Verificación
+# ------------------------------------------------------------------
+
+# Capas anunciadas y sus resúmenes en el WFS público:
+curl -s "https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wfs?service=WFS&request=GetCapabilities" \
+  | grep -E "<(Name|Abstract)>"
+
+# Estado enabled de un featureType:
+# curl -s -u admin:... <href-del-featureType> | python3 -m json.tool | grep enabled

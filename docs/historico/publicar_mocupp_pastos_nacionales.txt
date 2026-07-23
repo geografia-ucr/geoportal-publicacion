@@ -1,0 +1,105 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+# =============================================================================
+# Publicar 5 capas nacionales de pastos en el workspace mocupp_pastos
+# Ejecutado el 2026-07-14 desde /home/mfvargas/geoportal/publicacion
+#
+# Las capas nacionales coexisten con las 10 capas regionales (región Brunca)
+# publicadas anteriormente en el mismo workspace/datastore.
+# =============================================================================
+
+# --- Paso 0: Preparación local (directorio mocupp_pastos/) ---
+
+# Archivos originales recibidos -> nombre definitivo (typeName) y título:
+#   Pastos_2021_Finales                  -> cobertura_pastos_cr_2021
+#        "Cobertura de pastos en Costa Rica 2021"
+#   Pastos_2022_Finales                  -> cobertura_pastos_cr_2022
+#        "Cobertura de pastos en Costa Rica 2022"
+#   cobertura_arborea_2021_ver02         -> cobertura_arborea_pastos_cr_2021
+#        "Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2021"
+#   cobertura_arborea_2022_ver02         -> cobertura_arborea_pastos_cr_2022
+#        "Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2022"
+#   Perdida_Ganancia_Cobertura_2021_2022 -> perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022
+#        "Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en Costa Rica 2021-2022"
+
+# Verificación de CRS: las dos capas de cobertura arbórea llegaron en
+# CR05 / CRTM05 (EPSG:5367) y se transformaron a CR-SIRGAS / CRTM05 (EPSG:8908)
+# con la transformación oficial de EPSG "CR05 to CR-SIRGAS (1)" (Helmert,
+# exactitud 0.5 m; mismos parámetros del WKT publicado por el SNIT en
+# https://www.snitcr.go.cr/pdfs/utilidades/WKT_CRSIRGAS_WGS84.txt):
+
+ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:5367 -t_srs EPSG:8908 -lco ENCODING=UTF-8 \
+  cobertura_arborea_pastos_cr_2021.shp cobertura_arborea_2021_ver02.shp
+ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:5367 -t_srs EPSG:8908 -lco ENCODING=UTF-8 \
+  cobertura_arborea_pastos_cr_2022.shp cobertura_arborea_2022_ver02.shp
+
+# Las otras 3 capas ya venían en EPSG:8908; solo se renombraron (shp, shx, dbf, prj, cpg).
+# Verificación final: python3 verificar_crs.py -> las 5 capas [CORRECTO] EPSG:8908.
+# Los archivos originales quedaron en mocupp_pastos/originales/ (no se subieron).
+
+# --- Paso 1: Respaldo en el servidor ---
+
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo bash -c 'cd /var/lib/docker/volumes/geoportal-gsdatadir/_data && \
+   zip -rq /home/geoportal/geoserver-data-mocupp_pastos-20260714.zip mocupp_pastos'"
+
+# --- Paso 2: Subir shapefiles y copiar al directorio de datos ---
+
+scp -o PubkeyAuthentication=no \
+  cobertura_pastos_cr_2021.* cobertura_pastos_cr_2022.* \
+  cobertura_arborea_pastos_cr_2021.* cobertura_arborea_pastos_cr_2022.* \
+  perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022.* \
+  geoportal@geoportal.ucr.ac.cr:/tmp/
+
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo bash -c 'cp /tmp/cobertura_pastos_cr_20*.* /tmp/cobertura_arborea_pastos_cr_20*.* \
+   /tmp/perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022.* \
+   /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_pastos/'"
+
+# Integridad verificada con md5sum local vs. servidor (25 archivos idénticos).
+# Limpieza: rm -f /tmp/<archivos> en el servidor.
+
+# --- Paso 3: Publicar los 5 featureTypes ---
+# El workspace y el datastore mocupp_pastos (tipo "Directory of spatial files")
+# ya existían; el datastore detecta los shapefiles nuevos del directorio.
+
+# 1. cobertura_pastos_cr_2021
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"name":"cobertura_pastos_cr_2021","title":"Cobertura de pastos en Costa Rica 2021","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 2. cobertura_pastos_cr_2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"name":"cobertura_pastos_cr_2022","title":"Cobertura de pastos en Costa Rica 2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 3. cobertura_arborea_pastos_cr_2021
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"name":"cobertura_arborea_pastos_cr_2021","title":"Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2021","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 4. cobertura_arborea_pastos_cr_2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"name":"cobertura_arborea_pastos_cr_2022","title":"Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 5. perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json; charset=utf-8" \
+  -d '{"featureType":{"name":"perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022","title":"Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en Costa Rica 2021-2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# --- Paso 4: GeoFence ---
+# No se requirió: la regla ALLOW existente del workspace mocupp_pastos
+# (Layer=*) cubre las capas nuevas. Acceso público verificado sin credenciales.
+
+# --- Paso 5: Verificación ---
+
+# Títulos en el GetCapabilities:
+#   curl -s "https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wfs?service=WFS&request=GetCapabilities"
+# Conteo de entidades (numberMatched), idéntico al de los shapefiles locales:
+#   cobertura_pastos_cr_2021: 49330
+#   cobertura_pastos_cr_2022: 49374
+#   cobertura_arborea_pastos_cr_2021: 23663
+#   cobertura_arborea_pastos_cr_2022: 23903
+#   perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022: 1565
+#   curl -s "https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=mocupp_pastos:CAPA&resultType=hits"

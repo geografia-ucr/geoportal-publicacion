@@ -1,0 +1,48 @@
+name: Nueva capa
+description: Solicitud de publicación de una capa nueva
+title: "[Capa] "
+labels: [capa-nueva]
+body:
+  - type: input
+    id: nodo
+    attributes:
+      label: Nodo
+      description: Nodo/subnodo al que pertenece (ej. mocupp-pastos) o "nuevo"
+    validations:
+      required: true
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre técnico propuesto (slug)
+      description: Minúsculas y guiones bajos, ej. cobertura_pastos_cr_2023
+    validations:
+      required: true
+  - type: input
+    id: titulo
+    attributes:
+      label: Título de despliegue
+    validations:
+      required: true
+  - type: dropdown
+    id: destinos
+    attributes:
+      label: Destinos de publicación
+      options:
+        - SNIT y GeoNode
+        - Solo GeoNode
+        - Solo SNIT
+    validations:
+      required: true
+  - type: input
+    id: crs
+    attributes:
+      label: CRS de origen de los datos
+      description: "Requisito final: EPSG:8908 (CR-SIRGAS / CRTM05)"
+      placeholder: "EPSG:5367"
+  - type: textarea
+    id: fuente
+    attributes:
+      label: Fuente de los datos
+      description: Origen, formato, responsable, licencia
+    validations:
+      required: true

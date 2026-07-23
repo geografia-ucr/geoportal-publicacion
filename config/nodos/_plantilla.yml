@@ -1,0 +1,89 @@
+# =============================================================================
+# PLANTILLA de configuración de un nodo de publicación geoespacial EG-UCR.
+#
+# Copiar este archivo como config/nodos/<slug-del-nodo>.yml y completar.
+# Validar contra config/esquema-nodo.json, por ejemplo:
+#
+#   python -c "
+#   import json, yaml, jsonschema
+#   esquema = json.load(open('config/esquema-nodo.json'))
+#   doc = yaml.safe_load(open('config/nodos/<slug>.yml'))
+#   jsonschema.validate(doc, esquema)"
+#
+# El prefijo "_" evita que las herramientas procesen esta plantilla como un
+# nodo real. Los campos marcados (opcional) pueden eliminarse si no aplican.
+# NUNCA poner credenciales ni contraseñas en estos archivos (van en .env).
+# =============================================================================
+
+nodo:
+  slug: mocupp-ejemplo            # obligatorio; minúsculas/dígitos con guiones: ^[a-z0-9]+(-[a-z0-9]+)*$
+  titulo: MOCUPP - Ejemplo        # (opcional) nombre legible del nodo
+  workspace: mocupp_ejemplo       # obligatorio; workspace en GeoServer
+  datastore: mocupp_ejemplo       # (opcional) datastore único del nodo;
+                                  # omitir con gpkg_por_capa (un datastore homónimo por capa)
+  datastore_tipo: shapefile_dir   # obligatorio: shapefile_dir | gpkg_por_capa
+  responsable: Escuela de Geografía, Universidad de Costa Rica (EG-UCR)  # (opcional)
+  contacto: correo@ucr.ac.cr      # (opcional)
+
+# (opcional) Valores por defecto que aplican a todas las capas del nodo.
+defaults:
+  crs_destino: EPSG:8908          # CR-SIRGAS / CRTM05, requisito de publicación
+  formato: shapefile              # shapefile | gpkg
+  licencia: CC-BY-4.0
+  destinos:                       # a qué plataformas se destina el nodo
+    snit: true
+    geonode: true
+
+capas:                            # obligatorio; al menos una capa
+  - slug: capa_ejemplo_2025       # obligatorio; typeName en GeoServer: ^[A-Za-z0-9_]+$
+                                  # (si el typeName real lleva guiones u otros
+                                  # caracteres, documentarlo en "notas")
+    titulo: Capa de ejemplo en Costa Rica 2025   # obligatorio; título de despliegue
+    abstract: >-                  # (opcional) resumen corto estilo SNIT
+      Descripción de la capa, generada por el proyecto MOCUPP (...). La capa
+      contiene polígonos con información de <atributos reales>.
+    palabras_clave: [MOCUPP, Tema, Costa Rica, "2025"]   # (opcional)
+    anio: 2025                    # (opcional) entero, o cadena para períodos: "2021-2022"
+    extension: nacional           # (opcional) nacional | brunca
+    habilitada: true              # (opcional) false = enabled=false en GeoServer
+    formato: shapefile            # (opcional) sobreescribe defaults.formato
+    archivo: capa_ejemplo_2025.shp  # obligatorio; archivo principal (.shp o .gpkg)
+    sha256: null                  # sha256sum del archivo principal; null si el
+                                  # dato no está en datos/ (solo servidor/datos-fuente)
+
+    fuente:                       # (opcional) procedencia del dato
+      archivo_original: Capa_Ejemplo_2025_Final.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/...
+      crs_origen: EPSG:5367       # CRS en que llegó el dato
+      sha256: null                # (opcional) hash del original
+
+    transformaciones:             # (opcional) qué se le hizo al dato antes de publicar
+      - tipo: ogr2ogr             # ogr2ogr | renombrado | otro
+        descripcion: Transformación de EPSG:5367 a EPSG:8908   # obligatorio
+        comando: ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:5367 -t_srs EPSG:8908 -lco ENCODING=UTF-8 salida.shp entrada.shp  # (opcional)
+        fecha: "2026-01-01"       # (opcional) YYYY-MM-DD o null
+
+    release:                      # (opcional) release de GitHub con el dato
+      tag: v1.0.0
+      asset: capa_ejemplo_2025.zip
+
+    destinos:                     # (opcional) sobreescribe defaults.destinos
+      snit: true
+      geonode: true
+
+    metadatos:                    # (opcional)
+      estado: borrador            # no-aplica | borrador | enviado | en-correccion | publicado
+      uuid_geonetwork: null       # (opcional) UUID del registro en GeoNetwork/SNIT
+      identificador_snit: CR_EG-UCR_XXXX_2025_10K_VE   # patrón CR_<org>_<código>_<año>_<escala>_VE
+      vista_previa:               # (opcional) parámetros para generar_vista_previa_snit.py
+        color: red
+        markersize: 0.5
+
+    publicado:                    # (opcional) fechas de publicación por plataforma (YYYY-MM-DD o null)
+      geoserver: null
+      snit: null
+      geonode: null
+
+    notas: >-                     # (opcional) todo lo que no quepa en los campos
+      Texto libre: correcciones históricas, discrepancias slug/typeName,
+      ubicación de datos que no están en el repo, etc.

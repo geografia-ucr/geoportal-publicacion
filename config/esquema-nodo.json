@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nodo de publicación geoespacial EG-UCR",
+  "type": "object",
+  "required": ["nodo", "capas"],
+  "additionalProperties": false,
+  "properties": {
+    "nodo": {
+      "type": "object",
+      "required": ["slug", "workspace", "datastore_tipo"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "titulo": { "type": "string" },
+        "workspace": { "type": "string" },
+        "datastore": { "type": "string" },
+        "datastore_tipo": { "enum": ["shapefile_dir", "gpkg_por_capa"] },
+        "responsable": { "type": "string" },
+        "contacto": { "type": "string" }
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "crs_destino": { "type": "string", "pattern": "^EPSG:[0-9]+$" },
+        "formato": { "enum": ["shapefile", "gpkg"] },
+        "destinos": { "$ref": "#/$defs/destinos" },
+        "licencia": { "type": "string" }
+      }
+    },
+    "capas": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/capa" }
+    }
+  },
+  "$defs": {
+    "destinos": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "snit": { "type": "boolean" },
+        "geonode": { "type": "boolean" }
+      }
+    },
+    "fecha": {
+      "anyOf": [
+        { "type": "string", "format": "date" },
+        { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        { "type": "null" }
+      ]
+    },
+    "capa": {
+      "type": "object",
+      "required": ["slug", "titulo", "archivo"],
+      "additionalProperties": false,
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$" },
+        "titulo": { "type": "string" },
+        "abstract": { "type": "string" },
+        "palabras_clave": { "type": "array", "items": { "type": "string" } },
+        "anio": { "type": ["integer", "string"] },
+        "extension": { "enum": ["nacional", "brunca"] },
+        "habilitada": { "type": "boolean" },
+        "formato": { "enum": ["shapefile", "gpkg"] },
+        "archivo": { "type": "string" },
+        "sha256": { "type": ["string", "null"] },
+        "fuente": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "archivo_original": { "type": "string" },
+            "ubicacion": { "type": "string" },
+            "crs_origen": { "type": "string" },
+            "sha256": { "type": ["string", "null"] }
+          }
+        },
+        "transformaciones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["tipo", "descripcion"],
+            "additionalProperties": false,
+            "properties": {
+              "tipo": { "enum": ["ogr2ogr", "renombrado", "otro"] },
+              "descripcion": { "type": "string" },
+              "comando": { "type": "string" },
+              "fecha": { "$ref": "#/$defs/fecha" }
+            }
+          }
+        },
+        "release": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tag": { "type": "string" },
+            "asset": { "type": "string" }
+          }
+        },
+        "destinos": { "$ref": "#/$defs/destinos" },
+        "metadatos": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "estado": { "enum": ["no-aplica", "borrador", "enviado", "en-correccion", "publicado"] },
+            "uuid_geonetwork": { "type": ["string", "null"] },
+            "identificador_snit": { "type": ["string", "null"] },
+            "vista_previa": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "color": { "type": "string" },
+                "markersize": { "type": "number" }
+              }
+            }
+          }
+        },
+        "publicado": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "geoserver": { "$ref": "#/$defs/fecha" },
+            "snit": { "$ref": "#/$defs/fecha" },
+            "geonode": { "$ref": "#/$defs/fecha" }
+          }
+        },
+        "notas": { "type": "string" }
+      }
+    }
+  }
+}

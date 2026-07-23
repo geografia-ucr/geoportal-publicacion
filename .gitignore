@@ -1,0 +1,26 @@
+# Credenciales — NUNCA versionar
+.env
+
+# Datos geoespaciales (se distribuyen como assets de GitHub Releases)
+datos/
+
+# Respaldos y archivos comprimidos
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Salidas regenerables
+metadatos_capas_*.xlsx
+
+# Archivos de bloqueo de LibreOffice/OpenOffice
+.~lock.*#
+
+# Configuración local del asistente
+.claude/

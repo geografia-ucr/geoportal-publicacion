@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Si utiliza estos datos o herramientas, por favor cítelos como se indica."
+title: "Publicación de capas geoespaciales de la Escuela de Geografía (UCR)"
+type: software
+authors:
+  - name: "Escuela de Geografía, Universidad de Costa Rica"
+    city: "San José"
+    country: CR
+repository-code: "https://github.com/geografia-ucr/geoportal-publicacion"
+license: MIT
+keywords:
+  - geoespacial
+  - SNIT
+  - MOCUPP
+  - Costa Rica
+  - GeoServer
+  - GeoNode
+  - ISO 19115

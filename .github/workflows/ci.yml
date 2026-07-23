@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar paquete y herramientas
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . ruff pytest
+
+      - name: Lint (ruff)
+        run: ruff check src/ tests/
+
+      - name: Pruebas (pytest)
+        run: pytest -q
+
+      - name: Validar configuración de nodos (JSON Schema)
+        run: |
+          python - <<'EOF'
+          import json, sys
+          from pathlib import Path
+          import yaml
+          from jsonschema import validate, ValidationError
+
+          esquema = json.loads(Path("config/esquema-nodo.json").read_text())
+          errores = 0
+          for f in sorted(Path("config/nodos").glob("*.yml")):
+              if f.name.startswith("_"):
+                  continue
+              try:
+                  validate(yaml.safe_load(f.read_text()), esquema)
+                  print(f"OK  {f}")
+              except ValidationError as e:
+                  print(f"ERROR {f}: {e.message}")
+                  errores += 1
+          sys.exit(1 if errores else 0)
+          EOF
+
+      - name: Validar metadatos XML (bien formados)
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q libxml2-utils
+          fallos=0
+          for x in $(find metadatos -path '*/3-actual/*.xml' -o -path '*/2-revision-snit/*.xml'); do
+            xmllint --noout "$x" || { echo "MAL FORMADO: $x"; fallos=1; }
+          done
+          exit $fallos
+
+      - name: Verificar formato de checksums
+        run: |
+          for f in checksums/SHA256SUMS-*.txt; do
+            [ -e "$f" ] || continue
+            grep -Ev '^[0-9a-f]{64}  \S+$' "$f" && { echo "Formato inválido en $f"; exit 1; } || true
+          done
+
+  secretos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detectar secretos (gitleaks)
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.18.4/gitleaks_8.18.4_linux_x64.tar.gz | tar xz gitleaks
+          ./gitleaks detect --source . --verbose --redact

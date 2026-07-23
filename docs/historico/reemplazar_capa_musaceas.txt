@@ -1,0 +1,57 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+# =============================================================================
+# Reemplazar capa perdida_ganancia_musaceas_2021_2022 en GeoServer
+# (corrección de CRS: UTM 16N → CRTM05/EPSG:8908)
+# Ejecutar cada comando uno por uno desde /home/mfvargas/geoportal/publicacion
+# =============================================================================
+
+# --- Paso 1: Respaldar el directorio mocupp_musaceas en el servidor ---
+
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo zip -r /home/geoportal/bak/geoserver-data-mocupp_musaceas-$(date +%Y%m%d).zip /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_musaceas"
+
+# Descargar respaldo a la estación de trabajo local (opcional)
+scp -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr:/home/geoportal/bak/geoserver-data-mocupp_musaceas-$(date +%Y%m%d).zip .
+
+# --- Paso 2: Subir los archivos corregidos al servidor ---
+
+# Crear directorio temporal
+ssh -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "mkdir -p /tmp/musaceas-fix-temp"
+
+# Copiar solo los archivos de la capa corregida
+scp -o PubkeyAuthentication=no \
+  mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.shp \
+  mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.dbf \
+  mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.shx \
+  mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.prj \
+  mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.cpg \
+  geoportal@geoportal.ucr.ac.cr:/tmp/musaceas-fix-temp/
+
+# --- Paso 3: Reemplazar archivos en el directorio de datos de GeoServer ---
+
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo cp /tmp/musaceas-fix-temp/* /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_musaceas/"
+
+# Verificar la copia
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo ls -lh /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_musaceas/perdida_ganancia_musaceas_2021_2022.*"
+
+# --- Paso 4: Limpiar directorio temporal ---
+
+ssh -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "rm -rf /tmp/musaceas-fix-temp"
+
+# --- Paso 5: Recargar el datastore en GeoServer ---
+
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPUT \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_musaceas/datastores/mocupp_musaceas/reset"
+
+# --- Paso 6: Verificar la publicación ---
+
+# Listar capas del workspace
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_musaceas/layers.json" | jq
+
+# Verificar en navegador: https://geoportal.ucr.ac.cr/geoserver/web/ → Layer Preview
+# La capa perdida_ganancia_musaceas_2021_2022 ya no debe aparecer desplazada.

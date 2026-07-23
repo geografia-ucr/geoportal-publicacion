@@ -1,0 +1,83 @@
+# Nodo MOCUPP - Musáceas
+# Configuración declarativa validable contra config/esquema-nodo.json.
+# Fuentes: publicar_mocupp_musaceas.txt, reemplazar_capa_musaceas.txt y
+# metadatos/mocupp-musaceas/actual/*.xml del repo viejo (~/geoportal/publicacion).
+
+nodo:
+  slug: mocupp-musaceas
+  titulo: MOCUPP - Musáceas
+  workspace: mocupp_musaceas
+  datastore: mocupp_musaceas
+  datastore_tipo: shapefile_dir
+  responsable: Escuela de Geografía, Universidad de Costa Rica (EG-UCR)
+  # TODO: contacto del nodo no confirmado en las fuentes (los XML muestran a
+  # Manuel Vargas como autor del metadato, no un punto de contacto del nodo).
+
+defaults:
+  crs_destino: EPSG:8908
+  formato: shapefile
+  licencia: CC-BY-4.0
+  destinos:
+    snit: true
+    geonode: true
+
+capas:
+  # Los títulos provienen de los metadatos SNIT (sin el sufijo "a escala
+  # 1:10.000"); los featureTypes de GeoServer se publicaron sin título explícito.
+  - slug: musaceas_cr_2021
+    titulo: Cultivo de musáceas en Costa Rica 2021
+    palabras_clave: [MOCUPP, Musáceas, Costa Rica, "2021"]
+    anio: 2021
+    extension: nacional
+    habilitada: true
+    archivo: musaceas_cr_2021.shp
+    sha256: 77d9748ba7af2d2b5727aa71436c50dd5ae9fcd6da9ecc5a034227beca4bbda6
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_EG-UCR_CMUSAC_2021_10KVE
+    publicado:
+      geoserver: "2026-03-02"
+      snit: null  # TODO: XML aprobado en el SNIT, pero la fecha exacta de aprobación no consta en las fuentes
+      geonode: null
+
+  - slug: musaceas_cr_2022
+    titulo: Cultivo de musáceas en Costa Rica 2022
+    palabras_clave: [MOCUPP, Musáceas, Costa Rica, "2022"]
+    anio: 2022
+    extension: nacional
+    habilitada: true
+    archivo: musaceas_cr_2022.shp
+    sha256: 66d74704f11897a1d7433182d37f6ffbdbe2c9b52e345201e42350ea98f9f812
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_EG-UCR_CMUSAC_2022_10KVE
+    publicado:
+      geoserver: "2026-03-02"
+      snit: null  # TODO: XML aprobado en el SNIT, fecha exacta de aprobación no confirmada
+      geonode: null
+
+  - slug: perdida_ganancia_musaceas_2021_2022
+    titulo: Pérdida y ganancia de cultivo de musáceas en Costa Rica 2021-2022
+    palabras_clave: [MOCUPP, Musáceas, Cobertura arbórea, Pérdida Cobertura arbórea,
+                     Ganancia Cobertura arbórea, Costa Rica, "2021-2022"]
+    anio: "2021-2022"
+    extension: nacional
+    habilitada: true
+    archivo: perdida_ganancia_musaceas_2021_2022.shp
+    sha256: af389dac012699d92084ef9ce8879962f40299fc249e0471e9817f309a76f895
+    transformaciones:
+      - tipo: otro
+        descripcion: >-
+          Corrección de CRS (2026-03-23): la versión publicada originalmente
+          estaba en CR-SIRGAS / UTM Zone 16N; se reemplazó por una versión
+          corregida en CR-SIRGAS / CRTM05 (EPSG:8908) y se recargó el datastore
+          con PUT .../datastores/mocupp_musaceas/reset
+          (ver reemplazar_capa_musaceas.txt del repo viejo).
+        fecha: "2026-03-23"
+    metadatos:
+      estado: publicado
+      identificador_snit: CR_EG-UCR_PGCMUSAC_2021-2022_10KVE
+    publicado:
+      geoserver: "2026-03-02"
+      snit: null  # TODO: XML aprobado en el SNIT, fecha exacta de aprobación no confirmada
+      geonode: null

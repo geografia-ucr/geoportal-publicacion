@@ -1,0 +1,30 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+FORMULARIO: Información para la publicación de un nodo en el SNIT
+Subnodo: MOCUPP - Café
+===========================================================================
+
+Nombre del nodo:                MOCUPP - Café
+Nombre de la institución:      Universidad de Costa Rica (UCR)
+Descripción del nodo:           Capas generadas por el proyecto MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en Paisajes Productivos) sobre áreas de cultivo de café y cobertura arbórea en paisajes productivos de café en Costa Rica. Incluye información anual de cobertura y análisis de pérdida y ganancia de cultivo de café y cobertura arbórea entre periodos, con detalle de uso, categoría y área en hectáreas.
+Nombre de la persona encargada: Melvin Lizano Araya
+Correo electrónico:             geoportal@ucr.ac.cr
+Teléfono:                       25116402
+Sitio web:                      https://www.geografia.fcs.ucr.ac.cr/
+Geoservicios (URL) WMS:        https://geoportal.ucr.ac.cr/geoserver/mocupp_cafe/wms
+Geoservicios (URL) WFS:        https://geoportal.ucr.ac.cr/geoserver/mocupp_cafe/wfs
+Usuario para metadatos:         geoportal@ucr.ac.cr
+Visor de la institución:        https://geoportal.ucr.ac.cr/
+
+---------------------------------------------------------------------------
+Capas incluidas en el geoservicio
+---------------------------------------------------------------------------
+
+Nombre de la capa                  | Capa oficial? | Fundamento legal
+-----------------------------------|---------------|------------------
+cultivo_cafe_2021                  | No            |
+cultivo_cafe_2022                  | No            |
+cobertura_arborea_2021             | No            |
+cobertura_arborea_2022             | No            |
+perdida_cobertura_arborea          | No            |
+perdida_ganancia_cultivo_cafe      | No            |

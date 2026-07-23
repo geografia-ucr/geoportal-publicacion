@@ -1,0 +1,29 @@
+name: Reporte de error
+description: Algo no funciona (CLI, servicios, metadatos)
+title: "[Error] "
+labels: [error]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área afectada
+      options:
+        - CLI geopub
+        - Servicios WFS/WMS (GeoServer)
+        - Metadatos / SNIT
+        - GeoNode
+        - Datos / Releases
+        - Documentación
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del problema
+      description: Qué esperaba y qué ocurrió; incluir comandos y salida si aplica
+    validations:
+      required: true
+  - type: textarea
+    id: reproduccion
+    attributes:
+      label: Pasos para reproducir

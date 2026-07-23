@@ -1,0 +1,40 @@
+# Configuración global del proyecto de publicación geoespacial EG-UCR.
+# Los valores sensibles (contraseñas, tokens) NO van aquí: se leen de .env
+# (ver .env.example).
+
+crs:
+  destino: EPSG:8908          # CR-SIRGAS / CRTM05 — requisito para toda capa publicada
+  origenes_conocidos:
+    - EPSG:5367               # CR05 / CRTM05 (requiere transformación)
+
+geoserver:
+  # URL base y usuario se pueden sobreescribir con GEOSERVER_URL / GEOSERVER_USER en .env
+  url: https://geoportal.ucr.ac.cr/geoserver
+  # Ruta del volumen Docker en el servidor (lado host)
+  ruta_datos_host: /var/lib/docker/volumes/geoportal-gsdatadir/_data
+  # La misma ruta vista desde dentro del contenedor (para los datastores)
+  ruta_datos_contenedor: /geoserver_data/data
+  # Directorio temporal de subida en el servidor
+  ruta_tmp: /tmp
+
+servidor:
+  ssh_host: geoportal.ucr.ac.cr
+  ssh_usuario: geoportal
+  # ssh requiere autenticación por contraseña (PubkeyAuthentication=no)
+  ssh_opciones: "-o PubkeyAuthentication=no"
+  ruta_respaldos: /home/geoportal/bak
+
+geonode:
+  url: https://geoportal.ucr.ac.cr
+  # Integración pendiente de decisión (ver docs/geonode.md)
+  habilitado: false
+
+snit:
+  # El WFS institucional que respalda el nodo SNIT
+  wfs_base: https://geoportal.ucr.ac.cr/geoserver
+  # Capa usada para el contorno nacional de las vistas previas
+  capa_limites: eg:ICR_dist2011
+
+github:
+  organizacion: geografia-ucr
+  repositorio: geoportal-publicacion

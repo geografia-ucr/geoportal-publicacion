@@ -1,0 +1,474 @@
+# Nodo MOCUPP - Pastos
+# Configuración declarativa validable contra config/esquema-nodo.json.
+# Fuentes: publicar_mocupp_pastos.txt (10 capas regionales Brunca),
+# publicar_mocupp_pastos_nacionales.txt (5 capas nacionales, 2026-07-14),
+# mantenimiento_mocupp_pastos_20260720.txt (deshabilitado de las 10 Brunca y
+# abstracts de las 5 nacionales), generar_metadatos_pastos_nacionales.py y
+# metadatos/mocupp-pastos/{actual,nacionales}/*.xml del repo viejo.
+#
+# Las 10 capas regionales de la Brunca están DESHABILITADAS en GeoServer desde
+# 2026-07-20 (enabled=false); sus datos NO están en datos/ de este repo: viven
+# en el servidor (/var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_pastos/)
+# y en ~/geografia-ucr/datos-fuente/. Solo las 5 nacionales (*_cr_*) siguen activas.
+
+nodo:
+  slug: mocupp-pastos
+  titulo: MOCUPP - Pastos
+  workspace: mocupp_pastos
+  datastore: mocupp_pastos
+  datastore_tipo: shapefile_dir
+  responsable: Escuela de Geografía, Universidad de Costa Rica (EG-UCR)
+  contacto: melvin.lizanoaraya@ucr.ac.cr
+
+defaults:
+  crs_destino: EPSG:8908
+  formato: shapefile
+  licencia: CC-BY-4.0
+  destinos:
+    snit: true
+    geonode: true
+
+capas:
+  # ---------------------------------------------------------------------------
+  # 10 capas regionales de la región Brunca (deshabilitadas 2026-07-20).
+  # Títulos de despliegue con "en la región Brunca" (decisión 2026-06-09);
+  # los typeNames técnicos de GeoServer no cambiaron.
+  # publicado.geoserver: fecha aproximada; los .txt no la registran (ver TODO).
+  # ---------------------------------------------------------------------------
+  - slug: Paisaje_cobertura_pastos_2020
+    titulo: Cobertura de pastos en la región Brunca de Costa Rica 2020
+    abstract: >-
+      Capa geográfica que muestra la cobertura de pastos para el año 2020 en la
+      región Brunca de Costa Rica, la cual es relevante para diversos fines
+      agropecuarios, ambientales, históricos, entre otros.
+    palabras_clave: [MOCUPP, Pastos, "2020", Costa Rica, Región Brunca]
+    anio: 2020
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_pastos_2020.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CPASRB_2020_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/ de
+      este repo). Deshabilitada en GeoServer desde 2026-07-20; reactivar con
+      PUT {"featureType":{"enabled":true}}. Correcciones de metadatos enviadas
+      al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Paisaje_cobertura_pastos_2021
+    titulo: Cobertura de pastos en la región Brunca de Costa Rica 2021
+    abstract: >-
+      Capa geográfica que muestra la cobertura de pastos para el año 2021 en la
+      región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Costa Rica, Región Brunca, "2021"]
+    anio: 2021
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_pastos_2021.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CPASRB_2021_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/).
+      Deshabilitada en GeoServer desde 2026-07-20. Correcciones de metadatos
+      enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Paisaje_cobertura_pastos_2022
+    titulo: Cobertura de pastos en la región Brunca de Costa Rica 2022
+    abstract: >-
+      Capa geográfica que muestra la cobertura de pastos para el año 2022 en la
+      región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Costa Rica, Región Brunca, "2022"]
+    anio: 2022
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_pastos_2022.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CPASRB_2022_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/).
+      Deshabilitada en GeoServer desde 2026-07-20. Correcciones de metadatos
+      enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Paisaje_cobertura_arborea_2020
+    titulo: Cobertura arbórea en paisaje productivo de pastos en la región Brunca de Costa Rica 2020
+    abstract: >-
+      Capa geográfica que muestra la cobertura arbórea para pastos para el año
+      2020 en la región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, "2020", Región Brunca, Costa Rica]
+    anio: 2020
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_arborea_2020.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CARBPASRB_2020_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/).
+      Deshabilitada en GeoServer desde 2026-07-20. Correcciones de metadatos
+      enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Paisaje_cobertura_arborea_2021
+    titulo: Cobertura arbórea en paisaje productivo de pastos en la región Brunca de Costa Rica 2021
+    abstract: >-
+      Capa geográfica que muestra la cobertura arbórea para pastos para el año
+      2021 en la región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, "2021", Región Brunca, Costa Rica]
+    anio: 2021
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_arborea_2021.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CARBPASRB_2021_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/).
+      Deshabilitada en GeoServer desde 2026-07-20. Correcciones de metadatos
+      enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Paisaje_cobertura_arborea_2022
+    titulo: Cobertura arbórea en paisaje productivo de pastos en la región Brunca de Costa Rica 2022
+    abstract: >-
+      Capa geográfica que muestra la cobertura arbórea para pastos para el año
+      2022 en la región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, "2022", Región Brunca, Costa Rica]
+    anio: 2022
+    extension: brunca
+    habilitada: false
+    archivo: Paisaje_cobertura_arborea_2022.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CARBPASRB_2022_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      Dato local solo en datos-fuente/ y en el servidor (no está en datos/).
+      Deshabilitada en GeoServer desde 2026-07-20. Correcciones de metadatos
+      enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1
+    titulo: Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en la región Brunca de Costa Rica 2019-2020 (V1)
+    abstract: >-
+      Capa de cobertura que muestra la pérdida y ganancia de la cobertura
+      arbórea sobre paisaje productivo de pastos del año 2019 al 2020 para la
+      región Brunca de Costa Rica V1
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, Pérdida de cobertura arbórea,
+                     Ganancia de cobertura arbórea, Costa Rica, Región Brunca, "2019-2020"]
+    anio: "2019-2020"
+    extension: brunca
+    habilitada: false
+    archivo: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_PG_CARBPASRB_2019-2020V1_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      El typeName real en GeoServer lleva guion en el período
+      (…_2019-2020_V1); el slug usa guion bajo porque el esquema no admite
+      guiones. Dato local solo en datos-fuente/ y en el servidor (no está en
+      datos/). Deshabilitada en GeoServer desde 2026-07-20. Correcciones de
+      metadatos enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2
+    titulo: Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en la región Brunca de Costa Rica 2019-2020 (V2)
+    abstract: >-
+      Capa de cobertura que muestra la pérdida y ganancia de la cobertura
+      arbórea sobre paisaje productivo de pastos del año 2019 al 2020 para la
+      región Brunca de Costa Rica V2
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, Pérdida de cobertura arbórea,
+                     Ganancia de cobertura arbórea, Costa Rica, Región Brunca, "2019-2020"]
+    anio: "2019-2020"
+    extension: brunca
+    habilitada: false
+    archivo: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_PG_CARBPASRB_2019-2020V2_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      El typeName real en GeoServer lleva guion en el período
+      (…_2019-2020_V2); el slug usa guion bajo porque el esquema no admite
+      guiones. Dato local solo en datos-fuente/ y en el servidor (no está en
+      datos/). Deshabilitada en GeoServer desde 2026-07-20. Correcciones de
+      metadatos enviadas al SNIT el 2026-07-02, pendiente aprobación.
+
+  - slug: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021
+    titulo: Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en la región Brunca de Costa Rica 2020-2021
+    abstract: >-
+      Capa de cobertura que muestra la pérdida y ganancia de la cobertura
+      arbórea sobre el paisaje productivo de pastos del año 2020 al 2021 para
+      la región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, Pérdida de cobertura arbórea,
+                     Ganancia de cobertura arbórea, Costa Rica, Región Brunca, "2020-2021"]
+    anio: "2020-2021"
+    extension: brunca
+    habilitada: false
+    archivo: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_PG_CARBPASRB_2020-2021_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      El typeName real en GeoServer lleva guion en el período (…_2020-2021);
+      el slug usa guion bajo porque el esquema no admite guiones. Dato local
+      solo en datos-fuente/ y en el servidor (no está en datos/). Deshabilitada
+      en GeoServer desde 2026-07-20. Correcciones de metadatos enviadas al SNIT
+      el 2026-07-02, pendiente aprobación.
+
+  - slug: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022
+    titulo: Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en la región Brunca de Costa Rica 2021-2022
+    abstract: >-
+      Capa de cobertura que muestra la pérdida y ganancia de la cobertura
+      arbórea sobre el paisaje productivo de pastos del año 2021 al 2022 para
+      la región Brunca de Costa Rica
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, Pérdida de cobertura arbórea,
+                     Ganancia de cobertura arbórea, Costa Rica, Región Brunca, "2021-2022"]
+    anio: "2021-2022"
+    extension: brunca
+    habilitada: false
+    archivo: Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022.shp
+    sha256: null
+    fuente:
+      ubicacion: Servidor GeoServer (_data/mocupp_pastos/) y ~/geografia-ucr/datos-fuente/
+      crs_origen: EPSG:8908
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_PG_CARBPASRB_2021-2022_10K_VE
+    publicado:
+      geoserver: "2026-03-03"  # TODO: fecha aproximada, no consta en los .txt del repo viejo
+      snit: null
+      geonode: null
+    notas: >-
+      El typeName real en GeoServer lleva guion en el período (…_2021-2022);
+      el slug usa guion bajo porque el esquema no admite guiones. Dato local
+      solo en datos-fuente/ y en el servidor (no está en datos/). Deshabilitada
+      en GeoServer desde 2026-07-20. Correcciones de metadatos enviadas al SNIT
+      el 2026-07-02, pendiente aprobación.
+
+  # ---------------------------------------------------------------------------
+  # 5 capas nacionales (únicas activas del workspace), publicadas 2026-07-14.
+  # Abstracts = campo abstract del featureType agregado el 2026-07-20 a
+  # solicitud del SNIT (mantenimiento_mocupp_pastos_20260720.txt).
+  # ---------------------------------------------------------------------------
+  - slug: cobertura_pastos_cr_2021
+    titulo: Cobertura de pastos en Costa Rica 2021
+    abstract: >-
+      Cobertura de pastos en Costa Rica para el año 2021, generada por el
+      proyecto MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en
+      Paisajes Productivos). La capa contiene polígonos con información de
+      clase, región, año y área en hectáreas.
+    palabras_clave: [MOCUPP, Pastos, Costa Rica, Pastos para ganadería, "2021"]
+    anio: 2021
+    extension: nacional
+    habilitada: true
+    archivo: cobertura_pastos_cr_2021.shp
+    sha256: ba0295f31a5f1e92429958850dd00e27217773777f051c35f794d99d6fb07666
+    fuente:
+      archivo_original: Pastos_2021_Finales.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/mocupp-pastos-originales/ (también en mocupp_pastos/originales/ del repo viejo)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: renombrado
+        descripcion: Renombrado de Pastos_2021_Finales.* a cobertura_pastos_cr_2021.* (shp, shx, dbf, prj, cpg); ya venía en EPSG:8908
+        fecha: "2026-07-14"
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CPAS_2021_10K_VE
+    publicado:
+      geoserver: "2026-07-14"
+      snit: null  # metadatos subidos al SNIT el 2026-07-14, en revisión
+      geonode: null
+
+  - slug: cobertura_pastos_cr_2022
+    titulo: Cobertura de pastos en Costa Rica 2022
+    abstract: >-
+      Cobertura de pastos en Costa Rica para el año 2022, generada por el
+      proyecto MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en
+      Paisajes Productivos). La capa contiene polígonos con información de
+      clase, región, año y área en hectáreas.
+    palabras_clave: [MOCUPP, Pastos, Costa Rica, Pastos para ganadería, "2022"]
+    anio: 2022
+    extension: nacional
+    habilitada: true
+    archivo: cobertura_pastos_cr_2022.shp
+    sha256: 7a5af3ce7e3374bdccbc42ab1979517a2969c2b2d1ac193af49a223df9fdcbf6
+    fuente:
+      archivo_original: Pastos_2022_Finales.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/mocupp-pastos-originales/ (también en mocupp_pastos/originales/ del repo viejo)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: renombrado
+        descripcion: Renombrado de Pastos_2022_Finales.* a cobertura_pastos_cr_2022.* (shp, shx, dbf, prj, cpg); ya venía en EPSG:8908
+        fecha: "2026-07-14"
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CPAS_2022_10K_VE
+    publicado:
+      geoserver: "2026-07-14"
+      snit: null  # metadatos subidos al SNIT el 2026-07-14, en revisión
+      geonode: null
+
+  - slug: cobertura_arborea_pastos_cr_2021
+    titulo: Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2021
+    abstract: >-
+      Cobertura arbórea sobre paisaje productivo de pastos en Costa Rica para
+      el año 2021, generada por el proyecto MOCUPP (Monitoreo del Cambio de Uso
+      y Cobertura de la Tierra en Paisajes Productivos). La capa contiene
+      polígonos con información de clase, región, año y área en hectáreas.
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, "2021", Costa Rica]
+    anio: 2021
+    extension: nacional
+    habilitada: true
+    archivo: cobertura_arborea_pastos_cr_2021.shp
+    sha256: bb921d38758d87884d942c751ba29fc7b331f6f3d7cdf359ca884ccfc8c9a464
+    fuente:
+      archivo_original: cobertura_arborea_2021_ver02.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/mocupp-pastos-originales/ (también en mocupp_pastos/originales/ del repo viejo)
+      crs_origen: EPSG:5367
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: >-
+          Transformación de CR05 / CRTM05 (EPSG:5367) a CR-SIRGAS / CRTM05
+          (EPSG:8908) con la transformación oficial de EPSG "CR05 to CR-SIRGAS (1)"
+          (Helmert, exactitud 0.5 m)
+        comando: ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:5367 -t_srs EPSG:8908 -lco ENCODING=UTF-8 cobertura_arborea_pastos_cr_2021.shp cobertura_arborea_2021_ver02.shp
+        fecha: "2026-07-14"
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CARBPAS_2021_10K_VE
+    publicado:
+      geoserver: "2026-07-14"
+      snit: null  # metadatos subidos al SNIT el 2026-07-14, en revisión
+      geonode: null
+
+  - slug: cobertura_arborea_pastos_cr_2022
+    titulo: Cobertura arbórea en paisaje productivo de pastos en Costa Rica 2022
+    abstract: >-
+      Cobertura arbórea sobre paisaje productivo de pastos en Costa Rica para
+      el año 2022, generada por el proyecto MOCUPP (Monitoreo del Cambio de Uso
+      y Cobertura de la Tierra en Paisajes Productivos). La capa contiene
+      polígonos con información de clase, región, año y área en hectáreas.
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, "2022", Costa Rica]
+    anio: 2022
+    extension: nacional
+    habilitada: true
+    archivo: cobertura_arborea_pastos_cr_2022.shp
+    sha256: c4a883baa70330bbd354f78293b741daac9ab67b0405c0f3358a54c8abaf67d4
+    fuente:
+      archivo_original: cobertura_arborea_2022_ver02.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/mocupp-pastos-originales/ (también en mocupp_pastos/originales/ del repo viejo)
+      crs_origen: EPSG:5367
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: >-
+          Transformación de CR05 / CRTM05 (EPSG:5367) a CR-SIRGAS / CRTM05
+          (EPSG:8908) con la transformación oficial de EPSG "CR05 to CR-SIRGAS (1)"
+          (Helmert, exactitud 0.5 m)
+        comando: ogr2ogr -f "ESRI Shapefile" -s_srs EPSG:5367 -t_srs EPSG:8908 -lco ENCODING=UTF-8 cobertura_arborea_pastos_cr_2022.shp cobertura_arborea_2022_ver02.shp
+        fecha: "2026-07-14"
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_CARBPAS_2022_10K_VE
+    publicado:
+      geoserver: "2026-07-14"
+      snit: null  # metadatos subidos al SNIT el 2026-07-14, en revisión
+      geonode: null
+
+  - slug: perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022
+    titulo: Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en Costa Rica 2021-2022
+    abstract: >-
+      Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de
+      pastos en Costa Rica para el período 2021-2022, generada por el proyecto
+      MOCUPP (Monitoreo del Cambio de Uso y Cobertura de la Tierra en Paisajes
+      Productivos). La capa contiene polígonos con información de código, tipo
+      de pérdida o ganancia, cobertura por año, región y área.
+    palabras_clave: [MOCUPP, Pastos, Cobertura arbórea, Pérdida de cobertura arbórea,
+                     Ganancia de cobertura arbórea, Costa Rica, "2021-2022"]
+    anio: "2021-2022"
+    extension: nacional
+    habilitada: true
+    archivo: perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022.shp
+    sha256: c96a9d038c9e412623ed8800ae2b9ac8c1ab1e7489d81e174d0e5fc2a6c5311f
+    fuente:
+      archivo_original: Perdida_Ganancia_Cobertura_2021_2022.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/mocupp-pastos-originales/ (también en mocupp_pastos/originales/ del repo viejo)
+      crs_origen: EPSG:8908
+    transformaciones:
+      - tipo: renombrado
+        descripcion: Renombrado de Perdida_Ganancia_Cobertura_2021_2022.* a perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022.* (shp, shx, dbf, prj, cpg); ya venía en EPSG:8908
+        fecha: "2026-07-14"
+    metadatos:
+      estado: enviado
+      identificador_snit: CR_EG-UCR_PG_CARBPAS_2021-2022_10K_VE
+    publicado:
+      geoserver: "2026-07-14"
+      snit: null  # metadatos subidos al SNIT el 2026-07-14, en revisión
+      geonode: null

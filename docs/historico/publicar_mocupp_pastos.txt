@@ -1,0 +1,134 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+# =============================================================================
+# Publicar mocupp_pastos en GeoServer
+# Ejecutar cada comando uno por uno desde /home/mfvargas/geoportal/publicacion
+# =============================================================================
+
+# --- Paso 1: Crear directorio y copiar shapefiles en el servidor ---
+
+# Crear directorio
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo mkdir -p /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_pastos"
+
+# Listar archivos de pastos para verificar nombres
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo ls /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/ | grep -iE 'Paisaje|Perdida'"
+
+# Copiar los 10 shapefiles de pastos al nuevo directorio
+# NOTA: se usa "sudo bash -c" para que los globs (.*) se expandan correctamente
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo bash -c 'cp /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_arborea_2020.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_arborea_2021.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_arborea_2022.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_pastos_2020.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_pastos_2021.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Paisaje_cobertura_pastos_2022.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp/Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022.* \
+           /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_pastos/'"
+
+# Verificar la copia
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr \
+  "sudo ls -lh /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_pastos/"
+
+# --- Paso 2: Crear workspace ---
+
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{"workspace":{"name":"mocupp_pastos"}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces"
+
+# Verificar
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces.json" | jq
+
+# --- Paso 3: Crear datastore de tipo directorio de shapefiles ---
+
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "mocupp_pastos",
+      "type": "Directory of spatial files (Shapefiles)",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "url", "$": "file:///geoserver_data/data/mocupp_pastos"},
+          {"@key": "charset", "$": "UTF-8"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores"
+
+# --- Paso 4: Publicar las 10 capas ---
+
+# 1. Paisaje_cobertura_arborea_2020
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_arborea_2020","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 2. Paisaje_cobertura_arborea_2021
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_arborea_2021","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 3. Paisaje_cobertura_arborea_2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_arborea_2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 4. Paisaje_cobertura_pastos_2020
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_pastos_2020","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 5. Paisaje_cobertura_pastos_2021
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_pastos_2021","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 6. Paisaje_cobertura_pastos_2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Paisaje_cobertura_pastos_2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 7. Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V1","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 8. Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2019-2020_V2","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 9. Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2020-2021","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# 10. Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022
+curl -s -u admin:$GEOSERVER_PASSWORD -XPOST -H "Content-type: application/json" \
+  -d '{"featureType":{"name":"Perdida_ganancia_cobertura_arborea_sobre_paisaje_productivo_de_pastos_2021-2022","nativeCRS":"EPSG:8908","srs":"EPSG:8908","enabled":true}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/datastores/mocupp_pastos/featuretypes"
+
+# --- Paso 5: Agregar regla en GeoFence ---
+# En la interfaz web de GeoServer: Security > GeoFence Data Rules > Add new rule
+# Configurar: Role=*, User=*, Service=*, Request=*, SubField=*,
+#             Workspace=mocupp_pastos, Layer=*, Access=ALLOW
+# La regla se aplica de inmediato, no requiere reiniciar.
+
+# --- Paso 6: Verificar la publicación ---
+
+# Listar capas del workspace
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_pastos/layers.json" | jq
+
+# Verificar en navegador: https://geoportal.ucr.ac.cr/geoserver/web/ -> Layer Preview
+
+# NOTA: NO eliminar aún las capas del workspace mocupp ni los archivos del directorio original.

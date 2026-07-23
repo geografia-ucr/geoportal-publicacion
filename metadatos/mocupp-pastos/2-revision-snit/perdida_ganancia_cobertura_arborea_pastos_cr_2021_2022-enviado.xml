@@ -1,0 +1,788 @@
+<mdb:MD_Metadata
+	xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+	xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
+	xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+	xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+	xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
+	xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+	xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+	xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+	xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+	xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+	xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
+	xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+	xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+	xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+	xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+	xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+	xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+	xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
+	xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+	xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+	xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+	xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>CR_EG-UCR_PG_CARBPAS_2021-2022_10K_VE</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <lan:PT_Locale id="ES">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="Español"/>
+      </lan:language>
+      <lan:country>
+        <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="ISO 3166-2-CR"/>
+      </lan:country>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/>
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura"/>
+      </mdb:resourceScope>
+      <mdb:name gco:nilReason="missing">
+        <gco:CharacterString/>
+      </mdb:name>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Escuela de Geografía, Universidad de Costa Rica</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:electronicMailAddress gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Manuel Vargas Del Valle</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>            <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>                <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E, segundo piso, Escuela de Geografía, San Pedro de Montes de Oca, San José, Costa Rica</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>San Pedro de Montes de Oca</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>San José</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>11501</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Costa Rica</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                  <cit:hoursOfService>
+                    <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                  </cit:hoursOfService>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:positionName>
+                <gco:CharacterString>Académico</gco:CharacterString>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  
+              <mdb:dateInfo>
+                <cit:CI_Date>
+                    <cit:date>
+                        <gco:DateTime>13/07/2026</gco:DateTime>
+                    </cit:date>
+                    <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision"/>
+                    </cit:dateType>
+                </cit:CI_Date>
+            </mdb:dateInfo>            <mdb:dateInfo>
+                <cit:CI_Date>
+                    <cit:date>
+                        <gco:DateTime>13/07/2026</gco:DateTime>
+                    </cit:date>
+                    <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation"/>
+                    </cit:dateType>
+                </cit:CI_Date>
+            </mdb:dateInfo>
+
+  <mdb:metadataStandard
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>NTIG_CR04_10.2020. V.2</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataLinkage
+    xmlns:geonet="http://www.fao.org/geonetwork">
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString/>
+      </cit:linkage>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata"/>
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:metadataLinkage
+    xmlns:geonet="http://www.fao.org/geonetwork"/>
+    <mdb:metadataLinkage
+      xmlns:geonet="http://www.fao.org/geonetwork">
+      <cit:CI_OnlineResource>
+        <cit:linkage>
+          <gco:CharacterString></gco:CharacterString>
+        </cit:linkage>
+        <cit:function>
+          <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata"/>
+        </cit:function>
+      </cit:CI_OnlineResource>
+    </mdb:metadataLinkage>
+      <mdb:spatialRepresentationInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <msr:MD_VectorSpatialRepresentation>
+          <msr:scope/>
+          <msr:topologyLevel>
+            <msr:MD_TopologyLevelCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopologyLevelCode" codeListValue="Solo geometría"/>
+          </msr:topologyLevel>
+          <msr:geometricObjects>
+            <msr:MD_GeometricObjects>
+              <msr:geometricObjectType>
+                <msr:MD_GeometricObjectTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_GeometricObjectTypeCode" codeListValue="Compuesto"/>
+              </msr:geometricObjectType>
+              <msr:geometricObjectCount>
+                <gco:Integer>1565</gco:Integer>
+              </msr:geometricObjectCount>
+            </msr:MD_GeometricObjects>
+          </msr:geometricObjects>
+          <msr:geometricObjects/>
+        </msr:MD_VectorSpatialRepresentation>
+      </mdb:spatialRepresentationInfo>
+      <mdb:referenceSystemInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrs:MD_ReferenceSystem>
+          <mrs:referenceSystemIdentifier>
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gco:CharacterString>EPSG:8908</gco:CharacterString>
+              </mcc:code>
+            </mcc:MD_Identifier>
+          </mrs:referenceSystemIdentifier>
+          <mrs:referenceSystemType>
+            <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="Proyectada"/>
+          </mrs:referenceSystemType>
+        </mrs:MD_ReferenceSystem>
+      </mdb:referenceSystemInfo>
+      <mdb:identificationInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mri:MD_DataIdentification>
+          <mri:citation>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos en Costa Rica 2021-2022 a escala 1:10.000</gco:CharacterString>
+              </cit:title>
+              <cit:alternateTitle>
+                <gco:CharacterString>EG-UCR_PG_CARBPAS_2021-2022_10K</gco:CharacterString>
+              </cit:alternateTitle>
+
+                          <mdb:dateInfo>
+                <cit:CI_Date>
+                    <cit:date>
+                        <gco:DateTime>13/07/2026</gco:DateTime>
+                    </cit:date>
+                    <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation"/>
+                    </cit:dateType>
+                </cit:CI_Date>
+            </mdb:dateInfo>
+
+              <cit:edition>
+                <gco:CharacterString>1 Edición</gco:CharacterString>
+              </cit:edition>
+              <cit:editionDate>
+                <gco:DateTime>13/07/2026</gco:DateTime>
+              </cit:editionDate>
+              <cit:identifier/>
+              <cit:presentationForm>
+                <cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_PresentationFormCode" codeListValue="Mapa digital"/>
+              </cit:presentationForm>
+            </cit:CI_Citation>
+          </mri:citation>
+          <mri:abstract>
+            <gco:CharacterString>Este producto resume la dinámica de pérdida, ganancia y no cambio de la cobertura arbórea asociada al paisaje productivo de pastos para ganadería en Costa Rica entre 2021 y 2022, evaluada principalmente a partir de los cambios in situ en el paisaje productivo y en una franja de influencia de 2 km alrededor de los polígonos de las pasturas, bajo el supuesto de que los cambios del entorno inmediato son relevantes para el monitoreo territorial, aunque no necesariamente atribuibles de forma directa a las pasturas para ganadería por coexistencia de otras actividades y transiciones graduales de uso/cobertura del suelo.
+El 99,42 % de la superficie correspondiente al paisaje ganadero no presentó cambios en la cobertura arbórea durante el período 2021-2022. Asimismo, se registró una ganancia de 2.165,86 ha de cobertura arbórea, correspondiente a áreas que pasaron de estar clasificadas como pasturas en 2021 a cobertura arbórea en 2022. Los cantones con mayor proporción de ganancia fueron La Cruz (18,96 %), Upala (14,23 %) y Nandayure (12,03 %).
+En cuanto a la pérdida de cobertura arbórea, se reportaron 3.952,20 ha distribuidas en 41 cantones. Los mayores valores se registraron en Pérez Zeledón (19,06 %), Buenos Aires (11,67 %) y San Carlos (8,59 %), los cuales concentraron la mayor superficie con pérdida de cobertura arbórea durante el período 2021-2022.</gco:CharacterString>
+          </mri:abstract>
+          <mri:purpose>
+            <gco:CharacterString>Contar con la cobertura de pérdida y ganancia de la cobertura arbórea sobre paisaje productivo de pastos del año 2021 al 2022 para Costa Rica, la cual es relevante para diversos fines investigativos, agropecuarios, ambientales, históricos, entre otros.</gco:CharacterString>
+          </mri:purpose>
+          <mri:credit>
+            <gco:CharacterString>Escuela de Geografía de la Universidad de Costa Rica</gco:CharacterString>
+          </mri:credit>
+          <mri:status>
+            <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="Completo"/>
+          </mri:status>
+          <mri:pointOfContact>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Escuela de Geografía, Universidad de Costa Rica</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Melvin Lizano Araya</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                                      <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>            <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>                <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:deliveryPoint>
+                                <gco:CharacterString>Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E, segundo piso, Escuela de Geografía, San Pedro de Montes de Oca, San José, Costa Rica</gco:CharacterString>
+                              </cit:deliveryPoint>
+                              <cit:city>
+                                <gco:CharacterString>San Pedro de Montes de Oca</gco:CharacterString>
+                              </cit:city>
+                              <cit:administrativeArea>
+                                <gco:CharacterString>San José</gco:CharacterString>
+                              </cit:administrativeArea>
+                              <cit:postalCode>
+                                <gco:CharacterString>11501</gco:CharacterString>
+                              </cit:postalCode>
+                              <cit:country>
+                                <gco:CharacterString>Costa Rica</gco:CharacterString>
+                              </cit:country>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>melvin.lizanoaraya@ucr.ac.cr</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:hoursOfService>
+                            <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                          </cit:hoursOfService>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:positionName>
+                        <gco:CharacterString>Académico</gco:CharacterString>
+                      </cit:positionName>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+              <cit:party>
+                <cit:CI_Individual>
+                  <cit:name gco:nilReason="missing">
+                    <gco:CharacterString/>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress gco:nilReason="missing">
+                            <gco:CharacterString/>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                </cit:CI_Individual>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </mri:pointOfContact>
+          <mri:spatialRepresentationType>
+            <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="Vector"/>
+          </mri:spatialRepresentationType>
+          <mri:spatialResolution>
+            <mri:MD_Resolution>
+              <mri:equivalentScale>
+                <mri:MD_RepresentativeFraction>
+                  <mri:denominator>
+                    <gco:Integer>10000</gco:Integer>
+                  </mri:denominator>
+                </mri:MD_RepresentativeFraction>
+              </mri:equivalentScale>
+            </mri:MD_Resolution>
+          </mri:spatialResolution>
+          <mri:topicCategory>
+            <mri:MD_TopicCategoryCode>Cobertura de la tierra con mapas básicos e imágenes</mri:MD_TopicCategoryCode>
+          </mri:topicCategory>
+          <mri:extent>
+            <gex:EX_Extent>
+              <gex:geographicElement>
+                <gex:EX_GeographicBoundingBox>
+                  <gex:westBoundLongitude>
+                    <gco:Decimal>-85.82321</gco:Decimal>
+                  </gex:westBoundLongitude>
+                  <gex:eastBoundLongitude>
+                    <gco:Decimal>-82.72273</gco:Decimal>
+                  </gex:eastBoundLongitude>
+                  <gex:southBoundLatitude>
+                    <gco:Decimal>8.35963</gco:Decimal>
+                  </gex:southBoundLatitude>
+                  <gex:northBoundLatitude>
+                    <gco:Decimal>11.20130</gco:Decimal>
+                  </gex:northBoundLatitude>
+                </gex:EX_GeographicBoundingBox>
+              </gex:geographicElement>
+              <gex:temporalElement/>
+            </gex:EX_Extent>
+          </mri:extent>
+          <mri:extent>
+            <gex:EX_Extent>
+              <gex:geographicElement/>
+            </gex:EX_Extent>
+          </mri:extent>
+          <mri:extent>
+            <gex:EX_Extent/>
+          </mri:extent>
+          <mri:resourceMaintenance>
+            <mmi:MD_MaintenanceInformation>
+              <mmi:maintenanceAndUpdateFrequency>
+                <mmi:MD_MaintenanceFrequencyCode codeListValue="No planificado" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode"/>
+              </mmi:maintenanceAndUpdateFrequency>
+            </mmi:MD_MaintenanceInformation>
+          </mri:resourceMaintenance>
+          <mri:graphicOverview>
+            <mcc:MD_BrowseGraphic>
+              <mcc:fileName>
+                <gco:CharacterString>Pérdida y ganancia de cobertura arbórea sobre paisaje productivo de pastos 2021-2022.jpg</gco:CharacterString>
+              </mcc:fileName>
+              <mcc:fileDescription>
+                <gco:CharacterString>Imagen ilustrativa</gco:CharacterString>
+              </mcc:fileDescription>
+            </mcc:MD_BrowseGraphic>
+          </mri:graphicOverview>
+          
+
+                        <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>MOCUPP</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Pastos</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="product" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Cobertura arbórea</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Pérdida de cobertura arbórea</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Ganancia de cobertura arbórea</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>Costa Rica</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              
+              <mri:descriptiveKeywords>
+              
+                <mri:MD_Keywords>
+        
+                                  
+              <mri:keyword>
+              
+				<gco:CharacterString>2021-2022</gco:CharacterString>
+				
+			  </mri:keyword>
+            
+                    <mri:tramite_snit>
+                        
+                        <mri:MD_KeywordTypeCode codeListValue="temporal" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+                        
+                    </mri:tramite_snit>
+                    
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+
+
+
+          <mri:resourceConstraints>
+            <mco:MD_LegalConstraints>
+              <mco:useLimitation gco:nilReason="missing">
+                <gco:CharacterString/>
+              </mco:useLimitation>
+              <mco:accessConstraints>
+                <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"/>
+              </mco:accessConstraints>
+              <mco:useConstraints>
+                <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"/>
+              </mco:useConstraints>
+              <mco:otherConstraints>
+                <gco:CharacterString>Su uso tendrá carácter libre y gratuito, siempre que se mencione el origen y propiedad de los datos.</gco:CharacterString>
+              </mco:otherConstraints>
+            </mco:MD_LegalConstraints>
+          </mri:resourceConstraints>
+          <mri:defaultLocale>
+            <lan:PT_Locale>
+              <lan:language>
+                <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="Español"/>
+              </lan:language>
+              <lan:country>
+                <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="ISO 3166-2-CR"/>
+              </lan:country>
+              <lan:characterEncoding>
+                <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/>
+              </lan:characterEncoding>
+            </lan:PT_Locale>
+          </mri:defaultLocale>
+          <mri:supplementalInformation>
+            <gco:CharacterString>Las áreas de pastos para ganadería en Costa Rica se definen como aquellas superficies cubiertas por pastos naturales o establecidos, destinadas al pastoreo y/o a la corta de forraje. Por su parte, la cobertura arbórea corresponde a áreas naturales, seminaturales o plantadas, constituidas principalmente por elementos arbóreos o arbustivos, tanto de especies nativas como exóticas. La pérdida de cobertura arbórea se define como la disminución de estas áreas entre dos períodos de análisis, producto del establecimiento o expansión de actividades agropecuarias u otros cambios en el uso de la tierra. En contraste, la ganancia de cobertura arbórea corresponde al incremento de áreas arboladas dentro de la matriz del paisaje productivo y sus zonas circundantes. La estimación de la pérdida y ganancia de cobertura arbórea requiere disponer de información correspondiente, al menos, a dos años consecutivos.
+El desarrollo metodológico consistió en la descarga de imágenes satelitales Sentinel y, de manera complementaria, de mosaicos Planet. Se estableció una Unidad Mínima Cartografiable (UMC) de 0,5 ha. El análisis consideró tanto el paisaje productivo de pastos como un área de amortiguamiento de 2 km alrededor de este, con el fin de identificar los cambios ocurridos en la cobertura arbórea entre 2021 y 2022.
+Los resultados muestran que el 99,42 % de la superficie correspondiente al paisaje ganadero no presentó cambios en la cobertura arbórea durante el período de análisis. Asimismo, se registró una ganancia de 2.165,86 ha de cobertura arbórea, correspondiente a áreas que pasaron de estar clasificadas como pasturas en 2021 a presentar cobertura arbórea en 2022. Los cantones con mayor proporción de ganancia fueron La Cruz (18,96 %), Upala (14,23 %) y Nandayure (12,03 %). En cuanto a la pérdida de cobertura arbórea, se reportaron 3.952,20 ha distribuidas en 41 cantones. Los mayores valores se registraron en Pérez Zeledón (19,06 %), Buenos Aires (11,67 %) y San Carlos (8,59 %), los cuales concentraron la mayor superficie con pérdida de cobertura arbórea durante el período 2021-2022.</gco:CharacterString>
+          </mri:supplementalInformation>
+        </mri:MD_DataIdentification>
+      </mdb:identificationInfo>
+      <mdb:distributionInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrd:MD_Distribution>
+
+
+                          <mrd:distributionFormat>
+                <mrd:MD_Format>
+                  <mrd:formatSpecificationCitation>
+                    <cit:CI_Citation>
+                      <cit:title>
+                        <gco:CharacterString>ESRI Shapefile</gco:CharacterString>
+                      </cit:title>
+                    </cit:CI_Citation>
+                  </mrd:formatSpecificationCitation>
+                </mrd:MD_Format>
+              </mrd:distributionFormat>
+
+
+          <mrd:transferOptions>
+            <mrd:MD_DigitalTransferOptions>
+              
+                          <mrd:onLine>
+                <cit:CI_OnlineResource>
+                    <cit:linkage>
+                        <gco:CharacterString>https://geoportal.ucr.ac.cr/geoserver/mocupp_pastos/wms</gco:CharacterString>
+                    </cit:linkage>
+                    <cit:protocol>
+                        <gco:CharacterString>OGC-WMS Web Map Service </gco:CharacterString>
+                    </cit:protocol>
+                    <cit:name>
+                        <gco:CharacterString>perdida_ganancia_cobertura_arborea_pastos_cr_2021_2022</gco:CharacterString>
+                    </cit:name>
+                    <cit:description>
+                        <gco:CharacterString>Capa de cobertura de pérdida y ganancia de la cobertura arbórea sobre paisaje productivo de pastos del año 2021 al 2022 en Costa Rica</gco:CharacterString>
+                    </cit:description>
+                    <cit:function>
+                        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information"/>
+                    </cit:function>
+                </cit:CI_OnlineResource>
+            </mrd:onLine>
+
+            </mrd:MD_DigitalTransferOptions>
+          </mrd:transferOptions>
+        </mrd:MD_Distribution>
+      </mdb:distributionInfo>
+      <mdb:dataQualityInfo
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mdq:DQ_DataQuality>
+          <mdq:scope>
+            <mcc:MD_Scope>
+              <mcc:level>
+                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura"/>
+              </mcc:level>
+            </mcc:MD_Scope>
+          </mdq:scope>
+        </mdq:DQ_DataQuality>
+      </mdb:dataQualityInfo>
+      <mdb:resourceLineage
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrl:LI_Lineage>
+          <mrl:statement>
+            <gco:CharacterString>Se deriva de un proceso de fotointerpretación a partir de imágenes Sentinel promediadas a partir de los cuatro meses iniciales de los años 2021 y 2022, de las cuales se obtuvieron las capas respectivas de cobertura arbórea y de pastos; al procesarse por medio de la herramienta ArcGIS se obtiene la pérdida y ganancia de cobertura arbórea respecto al paisaje productivo de pastos.
+Para generar la capa de cambios (no cambio, pérdida y ganancia) de cobertura arbórea asociada al paisaje productivo de pastos para ganadería para el período 2021-2022, se partió de las coberturas anuales del proceso MOCUPP Pastos, construidas mediante el uso de imágenes Sentinel-2 y, de forma complementaria, de mosaicos Planet para la validación del mapeo, mediante un mapeo basado en fotointerpretación. El producto adopta un área mínima mapeable de 0,5 ha. A partir de los polígonos del mapeo de la cobertura de pastos de ambos años, se delimitó una franja de amortiguamiento de 2 km alrededor de las áreas de pastos para caracterizar el contexto arbóreo de este paisaje productivo. Sobre las áreas in situ del cultivo y dicha franja se realizó la comparación espacial entre 2021 y 2022 para clasificar los cambios en las categorías «no cambio», «pérdida» y «ganancia».</gco:CharacterString>
+          </mrl:statement>
+          <mrl:scope/>
+        </mrl:LI_Lineage>
+      </mdb:resourceLineage>
+      <mdb:resourceLineage
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mrl:LI_Lineage/>
+      </mdb:resourceLineage>
+      <mdb:metadataMaintenance
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mmi:MD_MaintenanceInformation>
+          <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="No planificado"/>
+          </mmi:maintenanceAndUpdateFrequency>
+          <mmi:maintenanceDate>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>13/07/2026</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="Creación"/>
+              </cit:dateType>
+            </cit:CI_Date>
+          </mmi:maintenanceDate>
+        </mmi:MD_MaintenanceInformation>
+      </mdb:metadataMaintenance>
+      <mdb:acquisitionInformation
+        xmlns:geonet="http://www.fao.org/geonetwork">
+        <mac:MI_AcquisitionInformation>
+          <mac:scope>
+            <mcc:MD_Scope>
+              <mcc:level>
+                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue=""/>
+              </mcc:level>
+            </mcc:MD_Scope>
+          </mac:scope>
+        </mac:MI_AcquisitionInformation>
+      </mdb:acquisitionInformation>
+    </mdb:MD_Metadata>

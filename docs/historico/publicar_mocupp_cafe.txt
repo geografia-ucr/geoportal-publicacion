@@ -1,0 +1,286 @@
+# Registro histórico de comandos ejecutados (sanitizado). El flujo vigente es `geopub` — ver docs/flujo-publicacion.md
+
+# =============================================================================
+# Publicar mocupp_cafe en GeoServer (usando GeoPackage)
+# Ejecutar cada comando uno por uno desde /home/mfvargas/geoportal/publicacion
+# =============================================================================
+
+# --- Paso 1: Verificar CRS localmente ---
+
+cd /home/mfvargas/geoportal/publicacion
+python3 verificar_crs.py
+
+# --- Paso 2: Copiar .gpkg con nombres limpios (sin _fin, en minúscula) ---
+# Se usa ogr2ogr con -nln para renombrar también la capa interna del GeoPackage.
+
+ogr2ogr -nln cultivo_cafe_2021 mocupp_cafe/cultivo_cafe_2021.gpkg mocupp_cafe/cultivo_cafe_2021_fin.gpkg
+ogr2ogr -nln cultivo_cafe_2022 mocupp_cafe/cultivo_cafe_2022.gpkg mocupp_cafe/cultivo_cafe_2022_fin.gpkg
+ogr2ogr -nln cobertura_arborea_2021 mocupp_cafe/cobertura_arborea_2021.gpkg mocupp_cafe/cobertura_arborea_2021_fin.gpkg
+ogr2ogr -nln cobertura_arborea_2022 mocupp_cafe/cobertura_arborea_2022.gpkg mocupp_cafe/cobertura_arborea_2022_fin.gpkg
+ogr2ogr -nln perdida_cobertura_arborea mocupp_cafe/perdida_cobertura_arborea.gpkg mocupp_cafe/Perdida_cobertura_arborea_fin.gpkg
+ogr2ogr -nln perdida_ganancia_cultivo_cafe mocupp_cafe/perdida_ganancia_cultivo_cafe.gpkg mocupp_cafe/perdida_ganancia_cultivo_cafe_fin.gpkg
+
+# --- Paso 3: Respaldar el directorio de datos de GeoServer ---
+
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "sudo zip -r /home/geoportal/bak/geoserver-data-mocupp-cafe-$(date +%Y%m%d).zip /var/lib/docker/volumes/geoportal-gsdatadir/_data/"
+
+# Descargar respaldo a la estación de trabajo local (opcional)
+scp -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr:/home/geoportal/bak/geoserver-data-mocupp-cafe-$(date +%Y%m%d).zip .
+
+# --- Paso 4: Subir .gpkg al servidor ---
+
+# Crear directorio temporal en el servidor
+ssh -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "mkdir -p /tmp/mocupp-cafe-temp"
+
+# Copiar los .gpkg renombrados
+scp -o PubkeyAuthentication=no mocupp_cafe/cultivo_cafe_2021.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+scp -o PubkeyAuthentication=no mocupp_cafe/cultivo_cafe_2022.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+scp -o PubkeyAuthentication=no mocupp_cafe/cobertura_arborea_2021.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+scp -o PubkeyAuthentication=no mocupp_cafe/cobertura_arborea_2022.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+scp -o PubkeyAuthentication=no mocupp_cafe/perdida_cobertura_arborea.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+scp -o PubkeyAuthentication=no mocupp_cafe/perdida_ganancia_cultivo_cafe.gpkg geoportal@geoportal.ucr.ac.cr:/tmp/mocupp-cafe-temp/
+
+# Copiar al directorio de datos de GeoServer (requiere sudo)
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "sudo mkdir -p /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_cafe && sudo cp /tmp/mocupp-cafe-temp/* /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_cafe/"
+
+# Verificar la copia
+ssh -t -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "sudo ls -lh /var/lib/docker/volumes/geoportal-gsdatadir/_data/mocupp_cafe/"
+
+# Limpiar directorio temporal
+ssh -o PubkeyAuthentication=no geoportal@geoportal.ucr.ac.cr "rm -rf /tmp/mocupp-cafe-temp"
+
+# --- Paso 5: Crear workspace ---
+
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{"workspace":{"name":"mocupp_cafe"}}' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces"
+
+# Verificar
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces.json" | jq
+
+# --- Paso 6: Crear datastores (uno por cada .gpkg) ---
+# No existe datastore tipo "directorio de GeoPackage", así que se crea uno por archivo.
+
+# Datastore cultivo_cafe_2021
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "cultivo_cafe_2021",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/cultivo_cafe_2021.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# Datastore cultivo_cafe_2022
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "cultivo_cafe_2022",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/cultivo_cafe_2022.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# Datastore cobertura_arborea_2021
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "cobertura_arborea_2021",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/cobertura_arborea_2021.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# Datastore cobertura_arborea_2022
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "cobertura_arborea_2022",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/cobertura_arborea_2022.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# Datastore perdida_cobertura_arborea
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "perdida_cobertura_arborea",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/perdida_cobertura_arborea.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# Datastore perdida_ganancia_cultivo_cafe
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "dataStore": {
+      "name": "perdida_ganancia_cultivo_cafe",
+      "type": "GeoPackage",
+      "connectionParameters": {
+        "entry": [
+          {"@key": "database", "$": "file:///geoserver_data/data/mocupp_cafe/perdida_ganancia_cultivo_cafe.gpkg"},
+          {"@key": "namespace", "$": "http://geoserver.org/mocupp_cafe"}
+        ]
+      }
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores"
+
+# --- Paso 7: Publicar las capas ---
+# Cada capa se publica en su datastore correspondiente.
+
+# Publicar capa cultivo_cafe_2021
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "cultivo_cafe_2021",
+      "title": "Cultivo de café 2021",
+      "abstract": "Áreas de cultivo de café en Costa Rica para el año 2021",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/cultivo_cafe_2021/featuretypes"
+
+# Publicar capa cultivo_cafe_2022
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "cultivo_cafe_2022",
+      "title": "Cultivo de café 2022",
+      "abstract": "Áreas de cultivo de café en Costa Rica para el año 2022",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/cultivo_cafe_2022/featuretypes"
+
+# Publicar capa cobertura_arborea_2021
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "cobertura_arborea_2021",
+      "title": "Cobertura arbórea en paisaje de café 2021",
+      "abstract": "Cobertura arbórea en paisajes productivos de café en Costa Rica para el año 2021",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/cobertura_arborea_2021/featuretypes"
+
+# Publicar capa cobertura_arborea_2022
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "cobertura_arborea_2022",
+      "title": "Cobertura arbórea en paisaje de café 2022",
+      "abstract": "Cobertura arbórea en paisajes productivos de café en Costa Rica para el año 2022",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/cobertura_arborea_2022/featuretypes"
+
+# Publicar capa perdida_cobertura_arborea
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "perdida_cobertura_arborea",
+      "title": "Pérdida de cobertura arbórea en paisaje de café",
+      "abstract": "Pérdida de cobertura arbórea en paisajes productivos de café en Costa Rica",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/perdida_cobertura_arborea/featuretypes"
+
+# Publicar capa perdida_ganancia_cultivo_cafe
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  -XPOST \
+  -H "Content-type: application/json" \
+  -d '{
+    "featureType": {
+      "name": "perdida_ganancia_cultivo_cafe",
+      "title": "Pérdida y ganancia de cultivo de café",
+      "abstract": "Análisis de pérdida y ganancia de áreas de cultivo de café en Costa Rica",
+      "nativeCRS": "EPSG:8908",
+      "srs": "EPSG:8908",
+      "enabled": true
+    }
+  }' \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/datastores/perdida_ganancia_cultivo_cafe/featuretypes"
+
+# --- Paso 8: Agregar regla en GeoFence ---
+# En la interfaz web de GeoServer: Security > GeoFence Data Rules > Add new rule
+# Configurar: Role=*, User=*, Service=*, Request=*, SubField=*,
+#             Workspace=mocupp_cafe, Layer=*, Access=ALLOW
+# La regla se aplica de inmediato, no requiere reiniciar.
+
+# --- Paso 9: Verificar la publicación ---
+
+# Listar capas del workspace
+curl -s -u admin:$GEOSERVER_PASSWORD \
+  "https://geoportal.ucr.ac.cr/geoserver/rest/workspaces/mocupp_cafe/layers.json" | jq
+
+# Verificar en navegador: https://geoportal.ucr.ac.cr/geoserver/web/ -> Layer Preview
