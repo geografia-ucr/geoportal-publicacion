@@ -23,8 +23,10 @@ Los datos no vienen con el clon: `geopub release descargar <nodo>` los restaura 
    (ej. `metadatos/pastos-correcciones-snit`).
 2. Commits estilo *Conventional Commits*: tipo en inglés, descripción en español —
    `feat: agrega capa de piña 2023`, `fix: corrige bbox de cobertura_pastos_cr_2021`.
-3. Abrir un *pull request* hacia `main` (plantilla incluida). `main` está protegida:
-   la CI debe pasar antes del *merge*.
+3. Abrir un *pull request* hacia `main` (plantilla incluida). `main` está protegida
+   por un *ruleset* que **exige PR para todo cambio — incluso para administradores —**
+   con la CI en verde antes del *merge* (sin aprobaciones obligatorias mientras el
+   proyecto tenga un solo mantenedor). El *merge* se hace con *squash* o *merge commit*.
 4. La CI ejecuta: `ruff` + `pytest`, validación de `config/nodos/*.yml` contra
    `config/esquema-nodo.json`, XML de metadatos bien formados, formato de
    `checksums/*` y detección de secretos (gitleaks).
