@@ -33,8 +33,10 @@ Actualizado: 2026-08-11.
      (EPSG:5367), transformación publicada (EPSG:8908) y metadato ISO de CEPAL
      consolidados en `~/geografia-ucr/datos-fuente/icr-indice-combinado-ruralidad/`;
      el XML está como borrador en `metadatos/eg/1-borrador/`. Falta: adaptarlo,
-     cargarlo al SNIT y crear el release. Duda abierta: confirmar con CEPAL si
-     hubo un envío posterior al "1er envío_correcciones" (revisar correo UCR).
+     cargarlo al SNIT y crear el release. Confirmado (correo UCR de CEPAL del
+     2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
+     envíos posteriores de datos; el drive original ya no está disponible, la
+     copia local de `datos-fuente/` es la única.
    - `AcantiladosMuertosSirgas` (`CR_EG-UCR_ACANTILADOSMUERTOS_500KVE`, escala
      1:500.000): sin datos locales ni metadatos; el shapefile solo existe en el
      servidor. Si se retoma: descargarlo, generar metadatos y empaquetar.
