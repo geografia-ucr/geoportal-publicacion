@@ -42,7 +42,12 @@ def clasificar_crs(srs) -> tuple[str, str]:
     if srs is None:
         return SIN_CRS, "No definido"
 
-    srs.AutoIdentifyEPSG()
+    try:
+        srs.AutoIdentifyEPSG()
+    except RuntimeError:
+        # WKT sin correspondencia EPSG directa (p. ej. el WKT estilo ESRI
+        # "CR-SIRGAS_CRTM05" del SNIT): se sigue con la clasificación por nombre.
+        pass
     codigo_epsg = srs.GetAuthorityCode(None)
 
     if codigo_epsg == "8908":
