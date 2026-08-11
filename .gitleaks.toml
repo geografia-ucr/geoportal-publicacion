@@ -1,0 +1,12 @@
+# Configuración de gitleaks (la CI la toma automáticamente del directorio raíz).
+# Los enlaces permanentes públicos del SNIT (ver_xml_publico?key=<base64>) no
+# son secretos: son URL de consulta sin autenticación, pero su token base64
+# dispara la regla "generic-api-key" por entropía.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Enlaces públicos de la herramienta del SNIT"
+regexTarget = "line"
+regexes = ['''ver_xml_publico\?key=''']

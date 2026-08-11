@@ -52,12 +52,11 @@ capas:
           atributos). El comando exacto no consta.
         fecha: null
     metadatos:
-      # Borrador en metadatos/eg/1-borrador/ICR_dist2011.xml: metadato ISO
-      # 19115-3 (perfil NTIG_CR04) elaborado por CEPAL, adaptado el 2026-08-11
-      # a las convenciones del SNIT (identificador EG-UCR, EPSG:8908, scope
-      # Cobertura, contactos y distribución del geoportal). Pendiente de cargar
-      # a la herramienta del SNIT.
-      estado: borrador
+      # Metadato ISO 19115-3 (perfil NTIG_CR04) de CEPAL adaptado a las
+      # convenciones del SNIT y cargado a su herramienta el 2026-08-11
+      # (registro vivo: ver enlace en notas; copia genuina en
+      # metadatos/eg/2-revision-snit/ICR_dist2011-enviado.xml).
+      estado: enviado
       identificador_snit: CR_EG-UCR_ICR_2011_5K_VE
     publicado:
       geoserver: "2025-05-13"  # TODO: fecha del datastore eg (REST dateCreated); la de la capa no consta
@@ -67,7 +66,14 @@ capas:
       Esta capa es además el contorno nacional usado por geopub vista-previa
       (config/global.yml, snit.capa_limites). Verificación 2026-08-11: WFS
       publicado == datos-fuente (hash por feature de atributos, 2 329 526
-      vértices, 51 170 km²).
+      vértices, 51 170 km²). ICR_2011 = 0 significa sin dato (22 distritos
+      creados después del censo 2011 e Isla del Coco). Registro en el SNIT
+      (enviado 2026-08-11):
+      https://www.snitcr.go.cr/Tramites/ver_xml_publico?key=dHJhbWl0ZV9zbml0OjoyMzQ3NDE2ODU2YTdiNWI0ZjIxMWY3OTA1OTM3MzAzNg==
+      El autor del metadato es Marco Martínez (CEPAL); en el registro vivo el
+      individuo quedó como Manuel Vargas — cambiarlo a Marco en el editor,
+      junto con los artefactos de la herramienta (teléfonos placeholder y
+      correo personal inyectado como correo de la organización).
 
   - slug: AcantiladosMuertosSirgas
     titulo: Acantilados muertos

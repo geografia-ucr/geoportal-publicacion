@@ -108,49 +108,67 @@
           <cit:individual>
             <cit:CI_Individual>
               <cit:name>
-                <gco:CharacterString>Marco Martínez M</gco:CharacterString>
+                <gco:CharacterString>Manuel Vargas Del Valle</gco:CharacterString>
               </cit:name>
               <cit:contactInfo>
                 <cit:CI_Contact>
                               <cit:phone>
                 <cit:CI_Telephone>
                   <cit:number>
-                    <gco:CharacterString>(+506) 8402-8778</gco:CharacterString>
+                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
                   </cit:number>
                   <cit:numberType>
                     <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
                   </cit:numberType>
                 </cit:CI_Telephone>
-              </cit:phone>
+              </cit:phone>            <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>                <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
                   <cit:address>
                     <cit:CI_Address>
                       <cit:deliveryPoint>
-                        <gco:CharacterString>San José</gco:CharacterString>
+                        <gco:CharacterString>Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E, segundo piso, Escuela de Geografía, San Pedro de Montes de Oca, San José, Costa Rica</gco:CharacterString>
                       </cit:deliveryPoint>
                       <cit:city>
-                        <gco:CharacterString>San José</gco:CharacterString>
+                        <gco:CharacterString>San Pedro de Montes de Oca</gco:CharacterString>
                       </cit:city>
                       <cit:administrativeArea>
                         <gco:CharacterString>San José</gco:CharacterString>
                       </cit:administrativeArea>
                       <cit:postalCode>
-                        <gco:CharacterString></gco:CharacterString>
+                        <gco:CharacterString>11501</gco:CharacterString>
                       </cit:postalCode>
                       <cit:country>
                         <gco:CharacterString>Costa Rica</gco:CharacterString>
                       </cit:country>
                       <cit:electronicMailAddress>
-                        <gco:CharacterString>marcom2391@gmail.com</gco:CharacterString>
+                        <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
                       </cit:electronicMailAddress>
                     </cit:CI_Address>
                   </cit:address>
                   <cit:hoursOfService>
-                    <gco:CharacterString></gco:CharacterString>
+                    <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
                   </cit:hoursOfService>
                 </cit:CI_Contact>
               </cit:contactInfo>
               <cit:positionName>
-                <gco:CharacterString>Consultor</gco:CharacterString>
+                <gco:CharacterString>Académico</gco:CharacterString>
               </cit:positionName>
             </cit:CI_Individual>
           </cit:individual>
@@ -158,7 +176,7 @@
       </cit:party>
     </cit:CI_Responsibility>
   </mdb:contact>
-
+  
               <mdb:dateInfo>
                 <cit:CI_Date>
                     <cit:date>
@@ -255,7 +273,7 @@
                           <mdb:dateInfo>
                 <cit:CI_Date>
                     <cit:date>
-                        <gco:DateTime>06/01/2020</gco:DateTime>
+                        <gco:DateTime>01/06/2020</gco:DateTime>
                     </cit:date>
                     <cit:dateType>
                         <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation"/>
@@ -312,8 +330,8 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
                     <cit:CI_Contact>
                       <cit:address>
                         <cit:CI_Address>
-                          <cit:electronicMailAddress gco:nilReason="missing">
-                            <gco:CharacterString/>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
                           </cit:electronicMailAddress>
                         </cit:CI_Address>
                       </cit:address>
@@ -335,7 +353,25 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
                     <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
                   </cit:numberType>
                 </cit:CI_Telephone>
-              </cit:phone>
+              </cit:phone>            <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>                <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>(+506) ____-____</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie"/>
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
                           <cit:address>
                             <cit:CI_Address>
                               <cit:deliveryPoint>
@@ -466,108 +502,108 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
           <mri:graphicOverview>
             <mcc:MD_BrowseGraphic>
               <mcc:fileName>
-                <gco:CharacterString></gco:CharacterString>
+                <gco:CharacterString>https://www.snitcr.go.cr/Tramites/vf?k=dXBsb2FkOjoxNzg2NDcwMjAz</gco:CharacterString>
               </mcc:fileName>
               <mcc:fileDescription>
                 <gco:CharacterString>Índice Combinado de Ruralidad por distrito, Costa Rica 2011</gco:CharacterString>
               </mcc:fileDescription>
             </mcc:MD_BrowseGraphic>
           </mri:graphicOverview>
-
+          
 
                         <mri:descriptiveKeywords>
-
+              
                 <mri:MD_Keywords>
-
-
+        
+                                  
               <mri:keyword>
-
+              
 				<gco:CharacterString>Nuevas narrativas para una transformación rural</gco:CharacterString>
-
+				
 			  </mri:keyword>
-
+            
                     <mri:tramite_snit>
-
+                        
                         <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-
+                        
                     </mri:tramite_snit>
-
+                    
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-
+              
                 <mri:MD_Keywords>
-
-
+        
+                                  
               <mri:keyword>
-
+              
 				<gco:CharacterString>Ruralidad</gco:CharacterString>
-
+				
 			  </mri:keyword>
-
+            
                     <mri:tramite_snit>
-
+                        
                         <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-
+                        
                     </mri:tramite_snit>
-
+                    
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-
+              
                 <mri:MD_Keywords>
-
-
+        
+                                  
               <mri:keyword>
-
+              
 				<gco:CharacterString>Geoestadística</gco:CharacterString>
-
+				
 			  </mri:keyword>
-
+            
                     <mri:tramite_snit>
-
+                        
                         <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-
+                        
                     </mri:tramite_snit>
-
+                    
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-
+              
                 <mri:MD_Keywords>
-
-
+        
+                                  
               <mri:keyword>
-
+              
 				<gco:CharacterString>Costa Rica</gco:CharacterString>
-
+				
 			  </mri:keyword>
-
+            
                     <mri:tramite_snit>
-
+                        
                         <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-
+                        
                     </mri:tramite_snit>
-
+                    
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-
+              
                 <mri:MD_Keywords>
-
-
+        
+                                  
               <mri:keyword>
-
+              
 				<gco:CharacterString>2011</gco:CharacterString>
-
+				
 			  </mri:keyword>
-
+            
                     <mri:tramite_snit>
-
+                        
                         <mri:MD_KeywordTypeCode codeListValue="temporal" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-
+                        
                     </mri:tramite_snit>
-
+                    
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
 
@@ -603,7 +639,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
             </lan:PT_Locale>
           </mri:defaultLocale>
           <mri:supplementalInformation>
-            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y agrupación territorial. Cubre 491 distritos de la División Territorial Administrativa, incluida la Isla del Coco. El índice se calcula con datos del censo 2011: en los 22 distritos sin información censal de ese año (los creados posteriormente y la Isla del Coco) el valor del ICR es 0 y debe interpretarse como sin dato.</gco:CharacterString>
+            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y clasificación del territorio (rural, en transición o urbano). Cubre los 491 distritos de la división distrital de Costa Rica del año 2011, incluida la Isla del Coco.</gco:CharacterString>
           </mri:supplementalInformation>
         </mri:MD_DataIdentification>
       </mdb:identificationInfo>
@@ -627,11 +663,11 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
 
           <mrd:transferOptions>
             <mrd:MD_DigitalTransferOptions>
-
+              
                           <mrd:onLine>
                 <cit:CI_OnlineResource>
                     <cit:linkage>
-                        <gco:CharacterString>https://geoportal.ucr.ac.cr/geoserver/eg/wms</gco:CharacterString>
+                        <gco:CharacterString></gco:CharacterString>
                     </cit:linkage>
                     <cit:protocol>
                         <gco:CharacterString>OGC-WMS Web Map Service </gco:CharacterString>
@@ -668,7 +704,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
         xmlns:geonet="http://www.fao.org/geonetwork">
         <mrl:LI_Lineage>
           <mrl:statement>
-            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos: el Índice Tridimensional de Ruralidad (ITR), el Índice Multivariado de Ruralidad (IMR) y el Índice Funcional de Ruralidad (IFR). Se conforman seis categorías de ruralidad que definen el gradiente de ruralidad distrital, calculado con datos del censo 2011 sobre una división de 491 distritos; los distritos creados después del censo y la Isla del Coco quedan con valor 0 (sin dato). La capa original fue elaborada por la CEPAL en el sistema de referencia CR05 / CRTM05 (EPSG:5367) y transformada por la Escuela de Geografía de la Universidad de Costa Rica a CR-SIRGAS / CRTM05 (EPSG:8908) para su publicación en el geoportal institucional.</gco:CharacterString>
+            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos: el Índice Tridimensional de Ruralidad (ITR), el Índice Multivariado de Ruralidad (IMR) y el Índice Funcional de Ruralidad (IFR). Se conforman seis categorías de ruralidad que definen el gradiente de ruralidad distrital, sobre la división distrital de Costa Rica del año 2011 (491 distritos). La capa original fue elaborada por la CEPAL en el sistema de referencia CR05 / CRTM05 (EPSG:5367) y transformada por la Escuela de Geografía de la Universidad de Costa Rica a CR-SIRGAS / CRTM05 (EPSG:8908) para su publicación en el geoportal institucional.</gco:CharacterString>
           </mrl:statement>
           <mrl:scope/>
         </mrl:LI_Lineage>
@@ -686,7 +722,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
           <mmi:maintenanceDate>
             <cit:CI_Date>
               <cit:date>
-                <gco:Date>11/08/2026</gco:Date>
+                <gco:Date>08/11/2026</gco:Date>
               </cit:date>
               <cit:dateType>
                 <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="Última actualización"/>
