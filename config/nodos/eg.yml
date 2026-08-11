@@ -1,0 +1,85 @@
+# Nodo UCR - Escuela de Geografía (workspace eg)
+# Configuración declarativa validable contra config/esquema-nodo.json.
+# Capas institucionales publicadas fuera de los subnodos MOCUPP. Registradas en
+# el SNIT bajo el nodo "UCR - Escuela de Geografía" (ambas sin metadatos cargados
+# en el SNIT al 2026-08-11). Fuentes: GeoServer vivo (REST, 2026-08-11) e insumos
+# consolidados en ~/geografia-ucr/datos-fuente/icr-indice-combinado-ruralidad/.
+
+nodo:
+  slug: eg
+  titulo: UCR - Escuela de Geografía
+  workspace: eg
+  datastore: eg
+  datastore_tipo: shapefile_dir
+  responsable: Escuela de Geografía, Universidad de Costa Rica (EG-UCR)
+
+defaults:
+  crs_destino: EPSG:8908
+  formato: shapefile
+  destinos:
+    snit: true
+    geonode: false
+
+capas:
+  - slug: ICR_dist2011
+    titulo: Índice Combinado de Ruralidad
+    abstract: >-
+      Índice Combinado de Ruralidad (ICR) por distrito de Costa Rica (división
+      distrital 2011, 491 distritos), elaborado por la Comisión Económica para
+      América Latina y el Caribe (CEPAL) para proponer un concepto de ruralidad
+      no dicotómica a partir de datos geoestadísticos multidimensionales
+      oficiales.
+    palabras_clave: [Ruralidad, ICR, Distritos, CEPAL, Costa Rica, "2011"]
+    anio: 2011
+    extension: nacional
+    habilitada: true
+    # El featureType se publicó con el nombre ICR_dist2011 sobre el archivo
+    # nativo ICR_distritos_CEPAL_vf_CRSIRGAS.shp del datastore.
+    archivo: ICR_distritos_CEPAL_vf_CRSIRGAS.shp
+    sha256: 0a7852d318b42978b799dd29f91ed667ecdf406341b7c6fc3b2d71e7f995d858
+    fuente:
+      archivo_original: ICR_distritos_CEPAL_vf.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/icr-indice-combinado-ruralidad/original-cr05-cepal/
+      crs_origen: EPSG:5367
+      sha256: 6d327e7fc5a67887403185998185a3dc06abd5ee7ab8a8b427d221b729d9c028
+    transformaciones:
+      - tipo: ogr2ogr
+        descripcion: >-
+          Reproyección CR05/CRTM05 (EPSG:5367) a CR-SIRGAS/CRTM05 (EPSG:8908),
+          previa a este repositorio (verificada el 2026-08-11: la capa publicada
+          es idéntica al shapefile transformado, 491 features y mismos
+          atributos). El comando exacto no consta.
+        fecha: null
+    metadatos:
+      # Existe un metadato ISO 19115-3 (perfil NTIG_CR04) elaborado por CEPAL,
+      # copiado como borrador a metadatos/eg/1-borrador/ICR_dist2011.xml;
+      # nunca se cargó a la herramienta del SNIT.
+      estado: borrador
+      identificador_snit: null
+    publicado:
+      geoserver: "2025-05-13"  # TODO: fecha del datastore eg (REST dateCreated); la de la capa no consta
+      snit: null
+      geonode: null
+    notas: >-
+      Esta capa es además el contorno nacional usado por geopub vista-previa
+      (config/global.yml, snit.capa_limites). Verificación 2026-08-11: WFS
+      publicado == datos-fuente (hash por feature de atributos, 2 329 526
+      vértices, 51 170 km²).
+
+  - slug: AcantiladosMuertosSirgas
+    titulo: Acantilados muertos
+    habilitada: true
+    archivo: AcantiladosMuertosSirgas.shp
+    sha256: null  # sin datos locales: el shapefile solo existe en el servidor
+    publicado:
+      geoserver: "2025-05-13"  # TODO: fecha del datastore eg; la de la capa no consta
+      snit: null
+      geonode: null
+    notas: >-
+      Sin datos locales ni metadatos (2026-08-11): no hay XML en ninguna parte y
+      el registro autogenerado de GeoNode está vacío. El identificador
+      CR_EG-UCR_ACANTILADOSMUERTOS_500KVE (escala 1:500.000) citado en
+      docs/pendientes.md proviene del export viejo de GeoNetwork y no se
+      encontró en archivos locales. Zona de Osa, Puntarenas. Si se retoma:
+      descargar el shapefile del servidor, generar metadatos y empaquetar con
+      geopub release crear.

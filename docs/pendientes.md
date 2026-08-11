@@ -1,6 +1,6 @@
 # Estado del proyecto y pendientes
 
-Actualizado: 2026-07-22.
+Actualizado: 2026-08-11.
 
 ## Estado
 
@@ -9,6 +9,7 @@ Actualizado: 2026-07-22.
 | mocupp-musaceas | 3 | 3 | 3 aprobados | `mocupp-musaceas-v2026.07.22` |
 | mocupp-cafe | 6 | 4 | 4 aprobados (las 2 deshabilitadas no aplican) | `mocupp-cafe-v2026.07.22` |
 | mocupp-pastos | 15 | 5 (nacionales) | 10 Brunca + 5 nacionales **en revisión** | `mocupp-pastos-v2026.07.22` (5 nacionales) |
+| eg | 2 | 2 | ninguno cargado (1 borrador local del ICR) | sin release (ICR en `datos-fuente/`) |
 
 ## Pendientes
 
@@ -25,8 +26,21 @@ Actualizado: 2026-07-22.
 4. **Datos de las 10 capas Brunca** — no están en Releases (capas deshabilitadas;
    los shapefiles viven en el servidor y en los insumos fuente locales). Si se
    reactivan, empaquetarlas con `geopub release crear`.
-5. **Capas futuras del export viejo de GeoNetwork** — `CR_EG-UCR_ACANTILADOSMUERTOS_500KVE`
-   (escala 1:500.000, posiblemente otro workspace) y `Cobertura_Arborea_Region_Brunca_2020`.
+5. **Nodo `eg` (UCR - Escuela de Geografía)** — declarado en `config/nodos/eg.yml`
+   el 2026-08-11 con las 2 capas del workspace `eg`, ya publicadas en GeoServer y
+   registradas en el SNIT sin metadatos:
+   - `ICR_dist2011` (Índice Combinado de Ruralidad, CEPAL 2023): datos originales
+     (EPSG:5367), transformación publicada (EPSG:8908) y metadato ISO de CEPAL
+     consolidados en `~/geografia-ucr/datos-fuente/icr-indice-combinado-ruralidad/`;
+     el XML está como borrador en `metadatos/eg/1-borrador/`. Falta: adaptarlo,
+     cargarlo al SNIT y crear el release. Duda abierta: confirmar con CEPAL si
+     hubo un envío posterior al "1er envío_correcciones" (revisar correo UCR).
+   - `AcantiladosMuertosSirgas` (`CR_EG-UCR_ACANTILADOSMUERTOS_500KVE`, escala
+     1:500.000): sin datos locales ni metadatos; el shapefile solo existe en el
+     servidor. Si se retoma: descargarlo, generar metadatos y empaquetar.
+
+   También del export viejo de GeoNetwork: `Cobertura_Arborea_Region_Brunca_2020`
+   (sin publicar).
 6. **MOCUPP Piña y Palma** — insumos disponibles en los datos fuente, sin publicar.
 7. **Correo de organización en `pointOfContact` (4 capas de café)** — el correo a nivel
    de organización quedó con el del autor del metadato en vez del de INISEFOR-UNA;
