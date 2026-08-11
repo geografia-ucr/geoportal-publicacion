@@ -70,9 +70,10 @@ capas:
       creados después del censo 2011 e Isla del Coco). Registro en el SNIT
       (enviado 2026-08-11):
       https://www.snitcr.go.cr/Tramites/ver_xml_publico?key=dHJhbWl0ZV9zbml0OjoyMzQ3NDE2ODU2YTdiNWI0ZjIxMWY3OTA1OTM3MzAzNg==
-      — al subirlo, la herramienta reasignó la organización del autor del
-      metadato a CEPAL (EG-UCR no figura) e inyectó teléfonos placeholder y el
-      correo personal como correo de la organización; revisar en el editor.
+      El autor del metadato es Marco Martínez (CEPAL); en el registro vivo el
+      individuo quedó como Manuel Vargas — cambiarlo a Marco en el editor,
+      junto con los artefactos de la herramienta (teléfonos placeholder y
+      correo personal inyectado como correo de la organización).
 
   - slug: AcantiladosMuertosSirgas
     titulo: Acantilados muertos

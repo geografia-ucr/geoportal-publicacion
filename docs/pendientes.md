@@ -36,10 +36,11 @@ Actualizado: 2026-08-11.
      revisión del SNIT el 2026-08-11** con su vista previa (coropleta); registro
      vivo:
      <https://www.snitcr.go.cr/Tramites/ver_xml_publico?key=dHJhbWl0ZV9zbml0OjoyMzQ3NDE2ODU2YTdiNWI0ZjIxMWY3OTA1OTM3MzAzNg==>
-     (copia enviada en `metadatos/eg/2-revision-snit/`). Al cargar, la
-     herramienta reasignó la organización del autor del metadato a CEPAL e
-     inyectó teléfonos placeholder; corregir en el editor junto con las
-     observaciones de la revisora. Confirmado (correo UCR de CEPAL del
+     (copia enviada en `metadatos/eg/2-revision-snit/`). El autor del metadato
+     es Marco Martínez (CEPAL); en el registro vivo el individuo quedó como
+     Manuel Vargas — cambiarlo en el editor junto con los artefactos de la
+     herramienta (teléfonos placeholder, correo personal como correo de
+     organización) cuando lleguen las observaciones de la revisora. Confirmado (correo UCR de CEPAL del
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.

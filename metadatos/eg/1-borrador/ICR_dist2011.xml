@@ -72,7 +72,7 @@
       <cit:party>
         <cit:CI_Organisation>
           <cit:name>
-            <gco:CharacterString>Escuela de Geografía, Universidad de Costa Rica</gco:CharacterString>
+            <gco:CharacterString>Comisión Económica para América Latina y el Caribe (CEPAL)</gco:CharacterString>
           </cit:name>
           <cit:contactInfo>
             <cit:CI_Contact>
@@ -108,14 +108,14 @@
           <cit:individual>
             <cit:CI_Individual>
               <cit:name>
-                <gco:CharacterString>Manuel Vargas Del Valle</gco:CharacterString>
+                <gco:CharacterString>Marco Martínez M</gco:CharacterString>
               </cit:name>
               <cit:contactInfo>
                 <cit:CI_Contact>
                               <cit:phone>
                 <cit:CI_Telephone>
                   <cit:number>
-                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                    <gco:CharacterString>(+506) 8402-8778</gco:CharacterString>
                   </cit:number>
                   <cit:numberType>
                     <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
@@ -125,32 +125,32 @@
                   <cit:address>
                     <cit:CI_Address>
                       <cit:deliveryPoint>
-                        <gco:CharacterString>Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E, segundo piso, Escuela de Geografía, San Pedro de Montes de Oca, San José, Costa Rica</gco:CharacterString>
+                        <gco:CharacterString>San José</gco:CharacterString>
                       </cit:deliveryPoint>
                       <cit:city>
-                        <gco:CharacterString>San Pedro de Montes de Oca</gco:CharacterString>
+                        <gco:CharacterString>San José</gco:CharacterString>
                       </cit:city>
                       <cit:administrativeArea>
                         <gco:CharacterString>San José</gco:CharacterString>
                       </cit:administrativeArea>
                       <cit:postalCode>
-                        <gco:CharacterString>11501</gco:CharacterString>
+                        <gco:CharacterString></gco:CharacterString>
                       </cit:postalCode>
                       <cit:country>
                         <gco:CharacterString>Costa Rica</gco:CharacterString>
                       </cit:country>
                       <cit:electronicMailAddress>
-                        <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
+                        <gco:CharacterString>marcom2391@gmail.com</gco:CharacterString>
                       </cit:electronicMailAddress>
                     </cit:CI_Address>
                   </cit:address>
                   <cit:hoursOfService>
-                    <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                    <gco:CharacterString></gco:CharacterString>
                   </cit:hoursOfService>
                 </cit:CI_Contact>
               </cit:contactInfo>
               <cit:positionName>
-                <gco:CharacterString>Académico</gco:CharacterString>
+                <gco:CharacterString>Consultor</gco:CharacterString>
               </cit:positionName>
             </cit:CI_Individual>
           </cit:individual>
