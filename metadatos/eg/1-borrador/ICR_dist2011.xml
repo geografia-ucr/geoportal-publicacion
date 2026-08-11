@@ -603,7 +603,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
             </lan:PT_Locale>
           </mri:defaultLocale>
           <mri:supplementalInformation>
-            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y clasificación del territorio (rural, en transición o urbano). Cubre los 491 distritos de la división distrital de Costa Rica del año 2011, incluida la Isla del Coco.</gco:CharacterString>
+            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y agrupación territorial. Cubre 491 distritos de la División Territorial Administrativa, incluida la Isla del Coco. El índice se calcula con datos del censo 2011: en los 22 distritos sin información censal de ese año (los creados posteriormente y la Isla del Coco) el valor del ICR es 0 y debe interpretarse como sin dato.</gco:CharacterString>
           </mri:supplementalInformation>
         </mri:MD_DataIdentification>
       </mdb:identificationInfo>
@@ -668,7 +668,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
         xmlns:geonet="http://www.fao.org/geonetwork">
         <mrl:LI_Lineage>
           <mrl:statement>
-            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos: el Índice Tridimensional de Ruralidad (ITR), el Índice Multivariado de Ruralidad (IMR) y el Índice Funcional de Ruralidad (IFR). Se conforman seis categorías de ruralidad que definen el gradiente de ruralidad distrital, sobre la división distrital de Costa Rica del año 2011 (491 distritos). La capa original fue elaborada por la CEPAL en el sistema de referencia CR05 / CRTM05 (EPSG:5367) y transformada por la Escuela de Geografía de la Universidad de Costa Rica a CR-SIRGAS / CRTM05 (EPSG:8908) para su publicación en el geoportal institucional.</gco:CharacterString>
+            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos: el Índice Tridimensional de Ruralidad (ITR), el Índice Multivariado de Ruralidad (IMR) y el Índice Funcional de Ruralidad (IFR). Se conforman seis categorías de ruralidad que definen el gradiente de ruralidad distrital, calculado con datos del censo 2011 sobre una división de 491 distritos; los distritos creados después del censo y la Isla del Coco quedan con valor 0 (sin dato). La capa original fue elaborada por la CEPAL en el sistema de referencia CR05 / CRTM05 (EPSG:5367) y transformada por la Escuela de Geografía de la Universidad de Costa Rica a CR-SIRGAS / CRTM05 (EPSG:8908) para su publicación en el geoportal institucional.</gco:CharacterString>
           </mrl:statement>
           <mrl:scope/>
         </mrl:LI_Lineage>
