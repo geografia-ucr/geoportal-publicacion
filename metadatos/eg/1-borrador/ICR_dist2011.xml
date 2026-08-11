@@ -31,7 +31,7 @@
   <mdb:metadataIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString>CR_CEPAL_ICRVE.</gco:CharacterString>
+        <gco:CharacterString>CR_EG-UCR_ICR_2011_5K_VE</gco:CharacterString>
       </mcc:code>
       <mcc:codeSpace>
         <gco:CharacterString>urn:uuid</gco:CharacterString>
@@ -56,7 +56,7 @@
     xmlns:geonet="http://www.fao.org/geonetwork">
     <mdb:MD_MetadataScope>
       <mdb:resourceScope>
-        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Conjunto de datos no geográficos"/>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura"/>
       </mdb:resourceScope>
       <mdb:name gco:nilReason="missing">
         <gco:CharacterString/>
@@ -67,12 +67,12 @@
     xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_Responsibility>
       <cit:role>
-        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Coautor"/>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
       </cit:role>
       <cit:party>
         <cit:CI_Organisation>
           <cit:name>
-            <gco:CharacterString>Comisión Económica para América Latina y el Caribe (CEPAL)</gco:CharacterString>
+            <gco:CharacterString>Escuela de Geografía, Universidad de Costa Rica</gco:CharacterString>
           </cit:name>
           <cit:contactInfo>
             <cit:CI_Contact>
@@ -108,14 +108,14 @@
           <cit:individual>
             <cit:CI_Individual>
               <cit:name>
-                <gco:CharacterString>Marco Martínez M</gco:CharacterString>
+                <gco:CharacterString>Manuel Vargas Del Valle</gco:CharacterString>
               </cit:name>
               <cit:contactInfo>
                 <cit:CI_Contact>
                               <cit:phone>
                 <cit:CI_Telephone>
                   <cit:number>
-                    <gco:CharacterString>(+506) 8402-8778</gco:CharacterString>
+                    <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
                   </cit:number>
                   <cit:numberType>
                     <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice"/>
@@ -125,32 +125,32 @@
                   <cit:address>
                     <cit:CI_Address>
                       <cit:deliveryPoint>
-                        <gco:CharacterString>San José</gco:CharacterString>
+                        <gco:CharacterString>Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E, segundo piso, Escuela de Geografía, San Pedro de Montes de Oca, San José, Costa Rica</gco:CharacterString>
                       </cit:deliveryPoint>
                       <cit:city>
-                        <gco:CharacterString>San José</gco:CharacterString>
+                        <gco:CharacterString>San Pedro de Montes de Oca</gco:CharacterString>
                       </cit:city>
                       <cit:administrativeArea>
                         <gco:CharacterString>San José</gco:CharacterString>
                       </cit:administrativeArea>
                       <cit:postalCode>
-                        <gco:CharacterString></gco:CharacterString>
+                        <gco:CharacterString>11501</gco:CharacterString>
                       </cit:postalCode>
                       <cit:country>
                         <gco:CharacterString>Costa Rica</gco:CharacterString>
                       </cit:country>
                       <cit:electronicMailAddress>
-                        <gco:CharacterString>marcom2391@gmail.com</gco:CharacterString>
+                        <gco:CharacterString>manuel.vargas_d@ucr.ac.cr</gco:CharacterString>
                       </cit:electronicMailAddress>
                     </cit:CI_Address>
                   </cit:address>
                   <cit:hoursOfService>
-                    <gco:CharacterString></gco:CharacterString>
+                    <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
                   </cit:hoursOfService>
                 </cit:CI_Contact>
               </cit:contactInfo>
               <cit:positionName>
-                <gco:CharacterString>Consultor</gco:CharacterString>
+                <gco:CharacterString>Académico</gco:CharacterString>
               </cit:positionName>
             </cit:CI_Individual>
           </cit:individual>
@@ -158,11 +158,11 @@
       </cit:party>
     </cit:CI_Responsibility>
   </mdb:contact>
-  
+
               <mdb:dateInfo>
                 <cit:CI_Date>
                     <cit:date>
-                        <gco:DateTime>06/01/2020</gco:DateTime>
+                        <gco:DateTime>11/08/2026</gco:DateTime>
                     </cit:date>
                     <cit:dateType>
                         <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation"/>
@@ -215,7 +215,7 @@
           <msr:geometricObjects>
             <msr:MD_GeometricObjects>
               <msr:geometricObjectType>
-                <msr:MD_GeometricObjectTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_GeometricObjectTypeCode" codeListValue="Compuesto"/>
+                <msr:MD_GeometricObjectTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_GeometricObjectTypeCode" codeListValue="Superficie"/>
               </msr:geometricObjectType>
               <msr:geometricObjectCount>
                 <gco:Integer>491</gco:Integer>
@@ -231,12 +231,12 @@
           <mrs:referenceSystemIdentifier>
             <mcc:MD_Identifier>
               <mcc:code>
-                <gco:CharacterString>CR05/CRTM05: EPSG:5367, Tipo: ProjectadoCRS</gco:CharacterString>
+                <gco:CharacterString>EPSG:8908</gco:CharacterString>
               </mcc:code>
             </mcc:MD_Identifier>
           </mrs:referenceSystemIdentifier>
           <mrs:referenceSystemType>
-            <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="Ingeniería compuesta paramétrica"/>
+            <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="Proyectada"/>
           </mrs:referenceSystemType>
         </mrs:MD_ReferenceSystem>
       </mdb:referenceSystemInfo>
@@ -246,10 +246,10 @@
           <mri:citation>
             <cit:CI_Citation>
               <cit:title>
-                <gco:CharacterString>Índice Combinado de Ruralidad</gco:CharacterString>
+                <gco:CharacterString>Índice Combinado de Ruralidad por distrito de Costa Rica 2011 a escala 1:5.000</gco:CharacterString>
               </cit:title>
               <cit:alternateTitle>
-                <gco:CharacterString>ICR_dist2011</gco:CharacterString>
+                <gco:CharacterString>EG-UCR_ICR_2011_5K</gco:CharacterString>
               </cit:alternateTitle>
 
                           <mdb:dateInfo>
@@ -276,22 +276,24 @@
             </cit:CI_Citation>
           </mri:citation>
           <mri:abstract>
-            <gco:CharacterString>El Índice Combinado de Ruralidad (ICR) o grandiente de ruralidad, fue desarrollado en el El proyecto de asistencia técnica “Nuevas narrativas para una transformación rural en América Latina y el Caribe”, implementado por la Sede Subregional de la Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el apoyo financiero del Fondo Internacional de Desarrollo Agrícola (FIDA).
+            <gco:CharacterString>El Índice Combinado de Ruralidad (ICR) o gradiente de ruralidad fue desarrollado en el proyecto de asistencia técnica “Nuevas narrativas para una transformación rural en América Latina y el Caribe”, implementado por la Sede Subregional de la Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el apoyo financiero del Fondo Internacional de Desarrollo Agrícola (FIDA).
 
-Creado a partir de los subíndices: 
+Creado a partir de los subíndices:
 1. Índice Tridimensional de Ruralidad (ITR)
-2. Índice Multivariado de Ruralidad (ITR)
-3. Índice Funcional de Ruralidad (ITR).
+2. Índice Multivariado de Ruralidad (IMR)
+3. Índice Funcional de Ruralidad (IFR)
 
 Más información del proyecto y construcción metodológica en: https://www.cepal.org/es/fida-nuevas-narrativas/costa-rica</gco:CharacterString>
           </mri:abstract>
           <mri:purpose>
-            <gco:CharacterString>Proponer un nuevo concepto de ruralidad no dicotómica para Costa Rica, a través de análisis de datos geoestadísticos multidimencionales oficiales.</gco:CharacterString>
+            <gco:CharacterString>Proponer un nuevo concepto de ruralidad no dicotómica para Costa Rica, a través del análisis de datos geoestadísticos multidimensionales oficiales. Esta información es relevante para la planificación territorial y diversos fines públicos, académicos y de investigación.</gco:CharacterString>
           </mri:purpose>
           <mri:credit>
             <gco:CharacterString>Milagro Saborío R, Marco Martínez M, Mario Samper K.
 
-Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el apoyo financiero del Fondo Internacional de Desarrollo Agrícola (FIDA).</gco:CharacterString>
+Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el apoyo financiero del Fondo Internacional de Desarrollo Agrícola (FIDA).
+
+Publicación en el geoportal institucional: Escuela de Geografía de la Universidad de Costa Rica.</gco:CharacterString>
           </mri:credit>
           <mri:status>
             <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="Completo"/>
@@ -299,7 +301,7 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
           <mri:pointOfContact>
             <cit:CI_Responsibility>
               <cit:role>
-                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Coautor"/>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="Autor"/>
               </cit:role>
               <cit:party>
                 <cit:CI_Organisation>
@@ -310,8 +312,8 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
                     <cit:CI_Contact>
                       <cit:address>
                         <cit:CI_Address>
-                          <cit:electronicMailAddress>
-                            <gco:CharacterString>marcom2391@gmail.com</gco:CharacterString>
+                          <cit:electronicMailAddress gco:nilReason="missing">
+                            <gco:CharacterString/>
                           </cit:electronicMailAddress>
                         </cit:CI_Address>
                       </cit:address>
@@ -416,30 +418,30 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
               <mri:equivalentScale>
                 <mri:MD_RepresentativeFraction>
                   <mri:denominator>
-                    <gco:Integer></gco:Integer>
+                    <gco:Integer>5000</gco:Integer>
                   </mri:denominator>
                 </mri:MD_RepresentativeFraction>
               </mri:equivalentScale>
             </mri:MD_Resolution>
           </mri:spatialResolution>
           <mri:topicCategory>
-            <mri:MD_TopicCategoryCode>Información geocientífica</mri:MD_TopicCategoryCode>
+            <mri:MD_TopicCategoryCode>Sociedad</mri:MD_TopicCategoryCode>
           </mri:topicCategory>
           <mri:extent>
             <gex:EX_Extent>
               <gex:geographicElement>
                 <gex:EX_GeographicBoundingBox>
                   <gex:westBoundLongitude>
-                    <gco:Decimal>-86.14733</gco:Decimal>
+                    <gco:Decimal>-87.40</gco:Decimal>
                   </gex:westBoundLongitude>
                   <gex:eastBoundLongitude>
-                    <gco:Decimal>-82.5451</gco:Decimal>
+                    <gco:Decimal>-82.30</gco:Decimal>
                   </gex:eastBoundLongitude>
                   <gex:southBoundLatitude>
-                    <gco:Decimal>7.984</gco:Decimal>
+                    <gco:Decimal>5.20</gco:Decimal>
                   </gex:southBoundLatitude>
                   <gex:northBoundLatitude>
-                    <gco:Decimal>11.2239</gco:Decimal>
+                    <gco:Decimal>11.50</gco:Decimal>
                   </gex:northBoundLatitude>
                 </gex:EX_GeographicBoundingBox>
               </gex:geographicElement>
@@ -457,77 +459,115 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
           <mri:resourceMaintenance>
             <mmi:MD_MaintenanceInformation>
               <mmi:maintenanceAndUpdateFrequency>
-                <mmi:MD_MaintenanceFrequencyCode codeListValue="Desconocido" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode"/>
+                <mmi:MD_MaintenanceFrequencyCode codeListValue="No planificado" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode"/>
               </mmi:maintenanceAndUpdateFrequency>
             </mmi:MD_MaintenanceInformation>
           </mri:resourceMaintenance>
           <mri:graphicOverview>
             <mcc:MD_BrowseGraphic>
               <mcc:fileName>
-                <gco:CharacterString>https://www.snitcr.go.cr/Tramites/vf?k=dXBsb2FkOjoxNjkwNjQ5MjQ5</gco:CharacterString>
+                <gco:CharacterString></gco:CharacterString>
               </mcc:fileName>
               <mcc:fileDescription>
-                <gco:CharacterString>Mapa del ICR</gco:CharacterString>
+                <gco:CharacterString>Índice Combinado de Ruralidad por distrito, Costa Rica 2011</gco:CharacterString>
               </mcc:fileDescription>
             </mcc:MD_BrowseGraphic>
           </mri:graphicOverview>
-          
+
 
                         <mri:descriptiveKeywords>
-              
+
                 <mri:MD_Keywords>
-        
-                                  
+
+
               <mri:keyword>
-              
+
+				<gco:CharacterString>Nuevas narrativas para una transformación rural</gco:CharacterString>
+
+			  </mri:keyword>
+
+                    <mri:tramite_snit>
+
+                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+
+                    </mri:tramite_snit>
+
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+
+                <mri:MD_Keywords>
+
+
+              <mri:keyword>
+
 				<gco:CharacterString>Ruralidad</gco:CharacterString>
-				
+
 			  </mri:keyword>
-            
+
                     <mri:tramite_snit>
-                        
-                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-                        
+
+                        <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+
                     </mri:tramite_snit>
-                    
+
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-              
+
                 <mri:MD_Keywords>
-        
-                                  
+
+
               <mri:keyword>
-              
+
 				<gco:CharacterString>Geoestadística</gco:CharacterString>
-				
+
 			  </mri:keyword>
-            
+
                     <mri:tramite_snit>
-                        
-                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-                        
+
+                        <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+
                     </mri:tramite_snit>
-                    
+
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
               <mri:descriptiveKeywords>
-              
+
                 <mri:MD_Keywords>
-        
-                                  
+
+
               <mri:keyword>
-              
+
 				<gco:CharacterString>Costa Rica</gco:CharacterString>
-				
+
 			  </mri:keyword>
-            
+
                     <mri:tramite_snit>
-                        
-                        <mri:MD_KeywordTypeCode codeListValue="project" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
-                        
+
+                        <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+
                     </mri:tramite_snit>
-                    
+
+                </mri:MD_Keywords>
+              </mri:descriptiveKeywords>
+              <mri:descriptiveKeywords>
+
+                <mri:MD_Keywords>
+
+
+              <mri:keyword>
+
+				<gco:CharacterString>2011</gco:CharacterString>
+
+			  </mri:keyword>
+
+                    <mri:tramite_snit>
+
+                        <mri:MD_KeywordTypeCode codeListValue="temporal" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"/>
+
+                    </mri:tramite_snit>
+
                 </mri:MD_Keywords>
               </mri:descriptiveKeywords>
 
@@ -545,7 +585,7 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
                 <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"/>
               </mco:useConstraints>
               <mco:otherConstraints>
-                <gco:CharacterString></gco:CharacterString>
+                <gco:CharacterString>Su uso tendrá carácter libre y gratuito, siempre que se mencione el origen y propiedad de los datos.</gco:CharacterString>
               </mco:otherConstraints>
             </mco:MD_LegalConstraints>
           </mri:resourceConstraints>
@@ -563,7 +603,7 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
             </lan:PT_Locale>
           </mri:defaultLocale>
           <mri:supplementalInformation>
-            <gco:CharacterString></gco:CharacterString>
+            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y clasificación del territorio (rural, en transición o urbano). Cubre los 491 distritos de la división distrital de Costa Rica del año 2011, incluida la Isla del Coco.</gco:CharacterString>
           </mri:supplementalInformation>
         </mri:MD_DataIdentification>
       </mdb:identificationInfo>
@@ -587,23 +627,23 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
 
           <mrd:transferOptions>
             <mrd:MD_DigitalTransferOptions>
-              
+
                           <mrd:onLine>
                 <cit:CI_OnlineResource>
                     <cit:linkage>
-                        <gco:CharacterString>   https://geo.cepal.org/geo-fida/costa_rica/?lang=es&country=cri  </gco:CharacterString>
+                        <gco:CharacterString>https://geoportal.ucr.ac.cr/geoserver/eg/wms</gco:CharacterString>
                     </cit:linkage>
                     <cit:protocol>
-                        <gco:CharacterString>OGC-WFS Web Feature Service </gco:CharacterString>
+                        <gco:CharacterString>OGC-WMS Web Map Service </gco:CharacterString>
                     </cit:protocol>
                     <cit:name>
-                        <gco:CharacterString>Índice de Ruralidad Costa Rica</gco:CharacterString>
+                        <gco:CharacterString>ICR_dist2011</gco:CharacterString>
                     </cit:name>
                     <cit:description>
-                        <gco:CharacterString></gco:CharacterString>
+                        <gco:CharacterString>Índice Combinado de Ruralidad por distrito de Costa Rica, división distrital 2011.</gco:CharacterString>
                     </cit:description>
                     <cit:function>
-                        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="download"/>
+                        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information"/>
                     </cit:function>
                 </cit:CI_OnlineResource>
             </mrd:onLine>
@@ -618,7 +658,7 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
           <mdq:scope>
             <mcc:MD_Scope>
               <mcc:level>
-                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Conjunto de datos no geográficos"/>
+                <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura"/>
               </mcc:level>
             </mcc:MD_Scope>
           </mdq:scope>
@@ -628,10 +668,7 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
         xmlns:geonet="http://www.fao.org/geonetwork">
         <mrl:LI_Lineage>
           <mrl:statement>
-            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos (Índices Tridimensional, Funcional y Multivariado de Ruralidad). Se conforman 6 categorías de ruralidad que definen el gradiente de ruralidad distrital.
-Índice Tridimensional de Ruralidad (ITR)
-Índice Funcional de Ruralidad (IFR)
-Índice Funcional de Ruralidad (IFR)</gco:CharacterString>
+            <gco:CharacterString>El Gradiente de Ruralidad de cada distrito se calcula como un promedio simple de los tres índices de ruralidad propuestos: el Índice Tridimensional de Ruralidad (ITR), el Índice Multivariado de Ruralidad (IMR) y el Índice Funcional de Ruralidad (IFR). Se conforman seis categorías de ruralidad que definen el gradiente de ruralidad distrital, sobre la división distrital de Costa Rica del año 2011 (491 distritos). La capa original fue elaborada por la CEPAL en el sistema de referencia CR05 / CRTM05 (EPSG:5367) y transformada por la Escuela de Geografía de la Universidad de Costa Rica a CR-SIRGAS / CRTM05 (EPSG:8908) para su publicación en el geoportal institucional.</gco:CharacterString>
           </mrl:statement>
           <mrl:scope/>
         </mrl:LI_Lineage>
@@ -644,12 +681,12 @@ Comisión Económica para América Latina y el Caribe (CEPAL) en México, con el
         xmlns:geonet="http://www.fao.org/geonetwork">
         <mmi:MD_MaintenanceInformation>
           <mmi:maintenanceAndUpdateFrequency>
-            <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="Desconocido"/>
+            <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="No planificado"/>
           </mmi:maintenanceAndUpdateFrequency>
           <mmi:maintenanceDate>
             <cit:CI_Date>
               <cit:date>
-                <gco:Date>29/07/2023</gco:Date>
+                <gco:Date>11/08/2026</gco:Date>
               </cit:date>
               <cit:dateType>
                 <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="Última actualización"/>
