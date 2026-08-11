@@ -24,11 +24,12 @@ capas:
   - slug: ICR_dist2011
     titulo: Índice Combinado de Ruralidad
     abstract: >-
-      Índice Combinado de Ruralidad (ICR) por distrito de Costa Rica (división
-      distrital 2011, 491 distritos), elaborado por la Comisión Económica para
-      América Latina y el Caribe (CEPAL) para proponer un concepto de ruralidad
-      no dicotómica a partir de datos geoestadísticos multidimensionales
-      oficiales.
+      Índice Combinado de Ruralidad (ICR) por distrito de Costa Rica (491
+      distritos), elaborado por la Comisión Económica para América Latina y el
+      Caribe (CEPAL) para proponer un concepto de ruralidad no dicotómica a
+      partir de datos geoestadísticos multidimensionales oficiales. El índice
+      se calcula con datos del censo 2011; los 22 distritos creados después
+      del censo y la Isla del Coco quedan con valor 0 (sin dato).
     palabras_clave: [Ruralidad, ICR, Distritos, CEPAL, Costa Rica, "2011"]
     anio: 2011
     extension: nacional
