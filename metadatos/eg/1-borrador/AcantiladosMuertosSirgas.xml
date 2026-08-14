@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:geonet="http://www.fao.org/geonetwork" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>CR_EG-UCR_ACANTILADOSMUERTOS_500K_VE</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale>
+    <lan:PT_Locale id="ES">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="spa" />
+      </lan:language>
+      <lan:country>
+        <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="Costa Rica" />
+      </lan:country>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope>
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura" />
+      </mdb:resourceScope>
+      <mdb:name gco:nilReason="missing">
+        <gco:CharacterString />
+      </mdb:name>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact>
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Escuela de Geografía</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:electronicMailAddress gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Melvin Lizano Araya</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                  <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie" />
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>San José, Montes de Oca, Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E segundo piso Unidad de la Investigación, Escuela de Geografía.</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>Montes de Oca</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>San José</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>11501</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Costa Rica</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>melvin.lizanoaraya@ucr.ac.cr</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                  <cit:hoursOfService>
+                    <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                  </cit:hoursOfService>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:positionName>
+                <gco:CharacterString>Docente</gco:CharacterString>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-01-28T15:16:12</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:Date>2024-08-10</gco:Date>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="codeListLocation#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard>
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>NTIG_CR04_10.2020. V.2</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:spatialRepresentationInfo>
+    <msr:MD_VectorSpatialRepresentation>
+      <msr:topologyLevel>
+        <msr:MD_TopologyLevelCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_TopologyLevelCode" codeListValue="Solo geometría" />
+      </msr:topologyLevel>
+      <msr:geometricObjects>
+        <msr:MD_GeometricObjects>
+          <msr:geometricObjectType>
+            <msr:MD_GeometricObjectTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_GeometricObjectTypeCode" codeListValue="Curva" />
+          </msr:geometricObjectType>
+          <msr:geometricObjectCount>
+            <gco:Integer>4</gco:Integer>
+          </msr:geometricObjectCount>
+        </msr:MD_GeometricObjects>
+      </msr:geometricObjects>
+    </msr:MD_VectorSpatialRepresentation>
+  </mdb:spatialRepresentationInfo>
+  <mdb:referenceSystemInfo>
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gco:CharacterString>8908</gco:CharacterString>
+          </mcc:code>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+      <mrs:referenceSystemType>
+        <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="" />
+      </mrs:referenceSystemType>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo>
+    <mri:MD_DataIdentification>
+      <mri:citation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Acantilados muertos de Costa Rica a escala 1:500.000</gco:CharacterString>
+          </cit:title>
+          <cit:alternateTitle>
+            <gco:CharacterString>EG-UCR_ACANTILADOSMUERTOS_500K</gco:CharacterString>
+          </cit:alternateTitle>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2021-06-10</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:edition>
+            <gco:CharacterString>Versión_1</gco:CharacterString>
+          </cit:edition>
+          <cit:editionDate>
+            <gco:DateTime>2023-04-04T00:00:00</gco:DateTime>
+          </cit:editionDate>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract>
+        <gco:CharacterString>Líneas de acantilados muertos de Costa Rica a escala 1:500.000, derivadas de la capa de geomorfología elaborada para el PRUGAM. Los segmentos publicados corresponden a la zona de Osa, Puntarenas.</gco:CharacterString>
+      </mri:abstract>
+      <mri:purpose>
+        <gco:CharacterString>Contar con la capa de acantilados muertos a escala 1:500.000, la cual es relevante para diversos fines geomorfológicos, ambientales y de ordenamiento territorial, entre otros.</gco:CharacterString>
+      </mri:purpose>
+      <mri:status>
+        <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="completed" />
+      </mri:status>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="originator" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Escuela de Geografía</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:electronicMailAddress gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:name>
+                    <gco:CharacterString>Melvin Lizano Araya</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number>
+                            <gco:CharacterString>(+506) 2511-4592</gco:CharacterString>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number gco:nilReason="missing">
+                            <gco:CharacterString />
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimilie" />
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>San José, Montes de Oca, Ciudad de la Investigación, Facultad de Ciencias Sociales, Torre E segundo piso Unidad de la Investigación, Escuela de Geografía.</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Montes de Oca</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>San José</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>11501</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Costa Rica</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>melvin.lizanoaraya@ucr.ac.cr</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                      <cit:hoursOfService>
+                        <gco:CharacterString>Lunes a viernes de 8:00 am a 5:00 pm.</gco:CharacterString>
+                      </cit:hoursOfService>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:positionName>
+                    <gco:CharacterString>Docente</gco:CharacterString>
+                  </cit:positionName>
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:spatialRepresentationType>
+        <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="" />
+      </mri:spatialRepresentationType>
+      <mri:spatialResolution>
+        <mri:MD_Resolution>
+          <mri:equivalentScale>
+            <mri:MD_RepresentativeFraction>
+              <mri:denominator>
+                <gco:Integer>500000</gco:Integer>
+              </mri:denominator>
+            </mri:MD_RepresentativeFraction>
+          </mri:equivalentScale>
+        </mri:MD_Resolution>
+      </mri:spatialResolution>
+      <mri:topicCategory>
+        <mri:MD_TopicCategoryCode>environment</mri:MD_TopicCategoryCode>
+      </mri:topicCategory>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>-83.27575603863056</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>-83.11224821280969</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>8.615057261175785</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>8.685389787962425</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:temporalElement>
+            <gex:EX_TemporalExtent>
+              <gex:extent>
+                <gml:TimePeriod gml:id="A1234">
+                  <gml:beginPosition />
+                  <gml:endPosition />
+                </gml:TimePeriod>
+              </gex:extent>
+            </gex:EX_TemporalExtent>
+          </gex:temporalElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:geographicElement />
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:verticalElement>
+            <gex:EX_VerticalExtent>
+              <gex:minimumValue>
+                <gco:Real />
+              </gex:minimumValue>
+              <gex:maximumValue>
+                <gco:Real />
+              </gex:maximumValue>
+              <gex:verticalCRS />
+            </gex:EX_VerticalExtent>
+          </gex:verticalElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:resourceMaintenance>
+        <mmi:MD_MaintenanceInformation>
+          <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeListValue="asNeeded" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" />
+          </mmi:maintenanceAndUpdateFrequency>
+        </mmi:MD_MaintenanceInformation>
+      </mri:resourceMaintenance>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Geomorfología</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Acantilados</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Costa Rica</gco:CharacterString>
+          </mri:keyword>
+      <mri:keyword>
+        <gco:CharacterString>Osa</gco:CharacterString>
+      </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints>
+        <mco:MD_LegalConstraints>
+          <mco:accessConstraints>
+            <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" />
+          </mco:accessConstraints>
+          <mco:useConstraints>
+            <mco:MD_RestrictionCode codeListValue="Derechos de autor (Copyright)" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" />
+          </mco:useConstraints>
+          <mco:otherConstraints gco:nilReason="missing">
+            <gco:CharacterString />
+          </mco:otherConstraints>
+          <mco:otherConstraints>
+
+            <gco:CharacterString>Su uso tendrá carácter libre y gratuito, siempre que se mencione el origen y propiedad de los datos.</gco:CharacterString>
+
+          </mco:otherConstraints>
+        </mco:MD_LegalConstraints>
+      </mri:resourceConstraints>
+      <mri:defaultLocale>
+        <lan:PT_Locale>
+          <lan:language>
+            <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="spa" />
+          </lan:language>
+          <lan:country>
+            <lan:CountryCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CountryCode" codeListValue="Código ISO utilizado para cada uno de los países del mundo, el ISO de Costa Rica es (ISO 3166-2: CR)." />
+          </lan:country>
+          <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+          </lan:characterEncoding>
+        </lan:PT_Locale>
+      </mri:defaultLocale>
+      <mri:supplementalInformation gco:nilReason="missing">
+        <gco:CharacterString />
+      </mri:supplementalInformation>
+      <mri:supplementalInformation>
+
+        <gco:CharacterString>Atributos: Id (identificador del segmento), ModLito (modelado litoral: Acantilados Muertos) y length (longitud del segmento en metros).</gco:CharacterString>
+
+      </mri:supplementalInformation>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:contentInfo>
+    <mrc:MD_FeatureCatalogue>
+      <mrc:featureCatalogue>
+        <gfc:FC_FeatureCatalogue>
+          <gfc:producer />
+          <gfc:featureType>
+            <gfc:FC_FeatureType>
+              <gfc:typeName>Table name</gfc:typeName>
+              <gfc:isAbstract>
+                <gco:Boolean>false</gco:Boolean>
+              </gfc:isAbstract>
+              <gfc:carrierOfCharacteristics>
+                <gfc:FC_FeatureAttribute>
+                  <gfc:memberName>Column name</gfc:memberName>
+                  <gfc:definition>
+                    <gco:CharacterString>Definition</gco:CharacterString>
+                  </gfc:definition>
+                  <gfc:cardinality />
+                </gfc:FC_FeatureAttribute>
+              </gfc:carrierOfCharacteristics>
+              <gfc:featureCatalogue />
+            </gfc:FC_FeatureType>
+          </gfc:featureType>
+        </gfc:FC_FeatureCatalogue>
+      </mrc:featureCatalogue>
+    </mrc:MD_FeatureCatalogue>
+  </mdb:contentInfo>
+  <mdb:distributionInfo>
+    <mrd:MD_Distribution>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://geoportal.ucr.ac.cr/geoserver/eg/wms</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>OGC:WMS</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>AcantiladosMuertosSirgas</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+            <gco:CharacterString>Acantilados muertos de la zona de Osa, Costa Rica.</gco:CharacterString>
+          </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:dataQualityInfo>
+    <mdq:DQ_DataQuality>
+      <mdq:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mdq:scope>
+    </mdq:DQ_DataQuality>
+  </mdb:dataQualityInfo>
+  <mdb:resourceLineage>
+    <mrl:LI_Lineage>
+      <mrl:statement>
+        <gco:CharacterString>Capa derivada de la geomorfología de Costa Rica a escala 1:500.000 elaborada para el PRUGAM. Publicada en el GeoServer del geoportal de la Escuela de Geografía (UCR) en CR-SIRGAS / CRTM05 (EPSG:8908); los segmentos publicados corresponden a la zona de Osa, Puntarenas.</gco:CharacterString>
+      </mrl:statement>
+      <mrl:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="Cobertura" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mrl:scope>
+    </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+  <mdb:metadataMaintenance>
+    <mmi:MD_MaintenanceInformation>
+      <mmi:maintenanceAndUpdateFrequency>
+        <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="" />
+      </mmi:maintenanceAndUpdateFrequency>
+    </mmi:MD_MaintenanceInformation>
+  </mdb:metadataMaintenance>
+</mdb:MD_Metadata>

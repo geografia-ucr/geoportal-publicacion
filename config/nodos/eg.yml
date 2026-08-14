@@ -77,18 +77,43 @@ capas:
 
   - slug: AcantiladosMuertosSirgas
     titulo: Acantilados muertos
+    abstract: >-
+      Líneas de acantilados muertos de Costa Rica a escala 1:500.000, derivadas
+      de la capa de geomorfología elaborada para el PRUGAM según su metadato
+      original. Los segmentos publicados corresponden a la zona de Osa,
+      Puntarenas.
+    palabras_clave: [Geomorfología, Acantilados, Costa Rica, Osa]
+    # extension omitida: el esquema solo contempla nacional|brunca y esta capa
+    # cubre la zona de Osa
     habilitada: true
     archivo: AcantiladosMuertosSirgas.shp
-    sha256: null  # sin datos locales: el shapefile solo existe en el servidor
+    sha256: f98e692100b8a6df2afa4d623c1593ea49930ad435c1c147278c55c5233b083c
+    fuente:
+      archivo_original: AcantiladosMuertosSirgas.shp
+      ubicacion: ~/geografia-ucr/datos-fuente/acantilados-muertos/servidor/
+      # Copia rescatada del volumen de GeoServer el 2026-08-14 (única fuente
+      # conocida); verificada idéntica a lo publicado (WFS, 4 features).
+      crs_origen: EPSG:8908
+      sha256: f98e692100b8a6df2afa4d623c1593ea49930ad435c1c147278c55c5233b083c
+    metadatos:
+      # Borrador adaptado del metadato del export viejo de GeoNetwork
+      # (autor Melvin Lizano Araya, EG-UCR) a las convenciones del SNIT:
+      # identificador con _VE, scope Cobertura, restricción estándar, bbox
+      # real de Osa (el original declaraba la GAM), 4 objetos tipo Curva.
+      estado: borrador
+      identificador_snit: CR_EG-UCR_ACANTILADOSMUERTOS_500K_VE
     publicado:
-      geoserver: "2025-05-13"  # TODO: fecha del datastore eg; la de la capa no consta
+      geoserver: "2025-05-13"  # dateCreated de la capa vía REST (23:03 UTC)
       snit: null
       geonode: null
     notas: >-
-      Sin datos locales ni metadatos (2026-08-11): no hay XML en ninguna parte y
-      el registro autogenerado de GeoNode está vacío. El identificador
-      CR_EG-UCR_ACANTILADOSMUERTOS_500KVE (escala 1:500.000) citado en
-      docs/pendientes.md proviene del export viejo de GeoNetwork y no se
-      encontró en archivos locales. Zona de Osa, Puntarenas. Si se retoma:
-      descargar el shapefile del servidor, generar metadatos y empaquetar con
-      geopub release crear.
+      Metadato original hallado el 2026-08-14 en el export viejo de GeoNetwork
+      (copiado a datos-fuente/acantilados-muertos/metadatos-geonetwork/):
+      autor Melvin Lizano Araya, derivada de la geomorfología 1:500.000 del
+      PRUGAM, fecha del recurso 2021-06-10. OJO: ese metadato declara la
+      extensión de la GAM, pero los 4 segmentos publicados están en Osa
+      (Golfo Dulce) — confirmar con Melvin si la capa publicada es un recorte
+      o si falta el resto antes de enviar al SNIT. Título y abstract puestos
+      en GeoServer el 2026-08-14; ese mismo día se rescató el shapefile del
+      volumen del servidor (datos-fuente/acantilados-muertos/servidor/, única
+      fuente conocida) y se verificó idéntico a lo publicado por WFS.
