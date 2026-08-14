@@ -1,6 +1,6 @@
 # Estado del proyecto y pendientes
 
-Actualizado: 2026-08-11.
+Actualizado: 2026-08-14.
 
 ## Estado
 
@@ -35,12 +35,23 @@ Actualizado: 2026-08-11.
      con release `eg-v2026.08.11` verificado. Metadato adaptado y **enviado a
      revisión del SNIT el 2026-08-11** con su vista previa (coropleta); registro
      vivo:
-     <https://www.snitcr.go.cr/Tramites/ver_xml_publico?key=dHJhbWl0ZV9zbml0OjoyMzQ3NDE2ODU2YTdiNWI0ZjIxMWY3OTA1OTM3MzAzNg==>
-     (copia enviada en `metadatos/eg/2-revision-snit/`). El autor del metadato
-     es Marco Martínez (CEPAL); en el registro vivo el individuo quedó como
-     Manuel Vargas — cambiarlo en el editor junto con los artefactos de la
-     herramienta (teléfonos placeholder, correo personal como correo de
-     organización) cuando lleguen las observaciones de la revisora. Confirmado (correo UCR de CEPAL del
+     <https://www.snitcr.go.cr/Tramites/ver_xml_publico?key=dHJhbWl0ZV9zbml0OjoyMzQ3NDE2ODU2YTdiNWI0ZjIxMWY3OTA1OTM3MzAzNg==>.
+     El **2026-08-14 se aplicaron por adelantado en el editor** las correcciones
+     que se habían diferido a la llegada de observaciones: autor del metadato →
+     Marco Martínez (CEPAL, Consultor, con teléfono real, correo suministrado
+     por él —gmail—, horario, dirección San José y código postal 10101);
+     teléfonos placeholder eliminados; fechas de creación y edición →
+     04/08/2023 (entrega definitiva de CEPAL, antes 01/06/2020 heredada del
+     original y edición vacía); fecha de mantenimiento corregida (11/08/2026,
+     estaba con día/mes volteados). Verificado contra el registro vivo:
+     conteo de 491 objetos = 491 features por WFS, y la URL del WMS
+     (`https://geoportal.ucr.ac.cr/geoserver/eg/wms`) declarada en el editor y
+     respondiendo (GetCapabilities y GetMap); recordar que el export XML nunca
+     incluye esa URL. Copia del registro corregido en
+     `metadatos/eg/2-revision-snit/ICR_dist2011-corregido.xml` (junto a la
+     enviada). Quedan solo artefactos cosméticos del editor (bloque de
+     individuo vacío y entradas de teléfono sin número); **pendiente:
+     observaciones/aprobación de la revisora**. Confirmado (correo UCR de CEPAL del
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.
