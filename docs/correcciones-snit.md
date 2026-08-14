@@ -26,6 +26,31 @@ Generalización de la experiencia con las revisiones de café (2026-06) y pastos
 7. **Avisar a la persona revisora** (correo) cuando todas las capas estén corregidas,
    y dar seguimiento hasta la aprobación.
 
+## Descarga del registro con la `key` del enlace permanente
+
+La `key` base64 del botón "Enlace Permanente" del panel
+(`https://www.snitcr.go.cr/Tramites/mis_metadatos`) sirve para descargar el
+registro en los tres formatos que ofrecen los botones XML/DOCX/PDF
+(verificado 2026-08-14 con el registro del ICR):
+
+| Formato | URL | Autenticación |
+|---|---|---|
+| XML | `…/Tramites/ver_xml_publico?key=<key>` | No |
+| XML (descarga) | `…/Tramites/descargar_xml?key=<key>` | No (mismo contenido) |
+| DOCX | `…/Tramites/get_docx_metadata.php?k=<key>` | **Sí** (cookie de sesión) |
+| PDF | `…/Tramites/get_pdf_metadata.php?k=<key>` | **Sí** (cookie de sesión) |
+
+Detalles:
+
+- Ojo con el parámetro: los endpoints DOCX/PDF usan `k=`, los XML usan `key=`.
+- Sin sesión, DOCX/PDF devuelven JSON
+  `{"resultado":false, …, "Debe autenticarse en el sistema…"}`; con sesión de
+  navegador descargan como `doc.docx`/`doc.pdf` — renombrarlos al slug de la capa.
+- El DOCX/PDF son presentaciones generadas del registro vivo; para el repo la
+  fuente de verdad sigue siendo el XML (es lo que se promueve a `3-actual/`).
+- Existe además `…/Tramites/generar_pdf?key=<key>` (público), pero está roto en
+  el servidor del SNIT (error fatal de PHP); no usarlo.
+
 Para extraer el texto de un `.docx` de revisión sin abrir Word:
 
 ```bash
