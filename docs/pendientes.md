@@ -9,7 +9,7 @@ Actualizado: 2026-08-14.
 | mocupp-musaceas | 3 | 3 | 3 aprobados | `mocupp-musaceas-v2026.07.22` |
 | mocupp-cafe | 6 | 4 | 4 aprobados (las 2 deshabilitadas no aplican) | `mocupp-cafe-v2026.07.22` |
 | mocupp-pastos | 15 | 5 (nacionales) | 10 Brunca + 5 nacionales **en revisión** | `mocupp-pastos-v2026.07.22` (5 nacionales) |
-| eg | 2 | 2 | ICR **en revisión** (enviado 2026-08-11); acantilados sin metadatos | `eg-v2026.08.11` (solo ICR) |
+| eg | 2 | 2 | ICR **en revisión** (enviado 2026-08-11, correcciones anticipadas 2026-08-14); acantilados **borrador** | `eg-v2026.08.14` (ambas) |
 
 ## Pendientes
 
@@ -55,9 +55,20 @@ Actualizado: 2026-08-14.
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.
-   - `AcantiladosMuertosSirgas` (`CR_EG-UCR_ACANTILADOSMUERTOS_500KVE`, escala
-     1:500.000): sin datos locales ni metadatos; el shapefile solo existe en el
-     servidor. Si se retoma: descargarlo, generar metadatos y empaquetar.
+   - `AcantiladosMuertosSirgas` (escala 1:500.000): puesta en forma el
+     **2026-08-14** — shapefile rescatado del volumen del servidor a
+     `~/geografia-ucr/datos-fuente/acantilados-muertos/` (única fuente
+     conocida; verificado idéntico a lo publicado por WFS: 4 features en
+     Osa/Golfo Dulce, ≈11 km), release `eg-v2026.08.14` (ambas capas del
+     nodo), título y abstract puestos en GeoServer, y metadato **encontrado**
+     en el export viejo de GeoNetwork (autor Melvin Lizano, derivada de la
+     geomorfología 1:500.000 del PRUGAM). Borrador adaptado a las
+     convenciones del SNIT en
+     `metadatos/eg/1-borrador/AcantiladosMuertosSirgas.xml`
+     (`CR_EG-UCR_ACANTILADOSMUERTOS_500K_VE`) con su vista previa.
+     **Bloqueado antes de subir al SNIT**: el metadato original declara la
+     extensión de la GAM pero lo publicado está en Osa — preguntar a Melvin
+     si la capa es un recorte o si falta el resto.
 
    También del export viejo de GeoNetwork: `Cobertura_Arborea_Region_Brunca_2020`
    (sin publicar).
