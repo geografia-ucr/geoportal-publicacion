@@ -85,7 +85,9 @@ capas:
     palabras_clave: [Geomorfología, Acantilados, Costa Rica, Osa]
     # extension omitida: el esquema solo contempla nacional|brunca y esta capa
     # cubre la zona de Osa
-    habilitada: true
+    # Deshabilitada el 2026-08-14 mientras Melvin aclara si la capa está
+    # completa (ver notas); reactivar con geopub mantener --habilitar.
+    habilitada: false
     archivo: AcantiladosMuertosSirgas.shp
     sha256: f98e692100b8a6df2afa4d623c1593ea49930ad435c1c147278c55c5233b083c
     fuente:
@@ -116,4 +118,6 @@ capas:
       o si falta el resto antes de enviar al SNIT. Título y abstract puestos
       en GeoServer el 2026-08-14; ese mismo día se rescató el shapefile del
       volumen del servidor (datos-fuente/acantilados-muertos/servidor/, única
-      fuente conocida) y se verificó idéntico a lo publicado por WFS.
+      fuente conocida), se verificó idéntico a lo publicado por WFS y se
+      deshabilitó la capa a la espera de la aclaración (preguntas concretas
+      en docs/pendientes.md).
