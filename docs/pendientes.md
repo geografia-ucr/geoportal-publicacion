@@ -9,7 +9,7 @@ Actualizado: 2026-08-14.
 | mocupp-musaceas | 3 | 3 | 3 aprobados | `mocupp-musaceas-v2026.07.22` |
 | mocupp-cafe | 6 | 4 | 4 aprobados (las 2 deshabilitadas no aplican) | `mocupp-cafe-v2026.07.22` |
 | mocupp-pastos | 15 | 5 (nacionales) | 10 Brunca + 5 nacionales **en revisión** | `mocupp-pastos-v2026.07.22` (5 nacionales) |
-| eg | 2 | 2 | ICR **en revisión** (enviado 2026-08-11, correcciones anticipadas 2026-08-14); acantilados **borrador** | `eg-v2026.08.14` (ambas) |
+| eg | 2 | 1 (ICR; acantilados deshabilitada) | ICR **en revisión** (enviado 2026-08-11, correcciones anticipadas 2026-08-14); acantilados **borrador** | `eg-v2026.08.14` (ambas) |
 
 ## Pendientes
 
@@ -66,9 +66,26 @@ Actualizado: 2026-08-14.
      convenciones del SNIT en
      `metadatos/eg/1-borrador/AcantiladosMuertosSirgas.xml`
      (`CR_EG-UCR_ACANTILADOSMUERTOS_500K_VE`) con su vista previa.
-     **Bloqueado antes de subir al SNIT**: el metadato original declara la
-     extensión de la GAM pero lo publicado está en Osa — preguntar a Melvin
-     si la capa es un recorte o si falta el resto.
+     **Capa deshabilitada en GeoServer el 2026-08-14** (reversible con
+     `geopub mantener eg AcantiladosMuertosSirgas --habilitar`) mientras se
+     resuelve el bloqueo. **Preguntas concretas para Melvin Lizano** (bloquean
+     el envío al SNIT; las dos primeras son las decisivas):
+     1. ¿La capa publicada está completa o es un recorte? Lo publicado son 4
+        segmentos (≈11 km) en Osa/Golfo Dulce, pero su metadato de GeoNetwork
+        declara la extensión de la GAM. ¿Existe un shapefile más completo
+        (GAM o nacional)? Si existe, conseguirlo: lo rescatado del servidor
+        es hoy la única copia conocida.
+     2. ¿Cuál es la fuente real de estos segmentos? El metadato dice
+        "geomorfología 1:500.000 elaborada para el PRUGAM", pero el PRUGAM
+        cubre la GAM y estos acantilados están en Osa. Define el linaje ante
+        el SNIT.
+     3. Según 1 y 2: ¿se describe como "zona de Osa" (ajustar título,
+        resumen y bbox del borrador) o se reemplaza por la capa completa en
+        GeoServer antes de enviar?
+     4. ¿Las fechas del metadato corresponden a algo real? (recurso
+        2021-06-10; edición "Versión_1" 2023-04-04).
+     5. Confirmar que queda como autor y punto de contacto ante el SNIT con
+        sus datos institucionales (los ya aprobados en pastos).
 
    También del export viejo de GeoNetwork: `Cobertura_Arborea_Region_Brunca_2020`
    (sin publicar).
