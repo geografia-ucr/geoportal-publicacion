@@ -64,12 +64,13 @@ Actualizado: 2026-08-25.
      sola observación, en Información suplementaria: anteponer "Capa vectorial
      que contiene " y pasar "Atributos" a minúscula. Aplicada ese mismo día en
      el editor del SNIT y verificada contra el registro vivo; copia genuina en
-     `ICR_dist2011-corregido.xml`. Efecto colateral del editor detectado en esa
-     verificación: al guardar se vació la Provincia (`administrativeArea`, era
-     "San José") de la dirección del contacto del metadato (Marco Martínez);
-     **pendiente restaurarla en el editor y volver a descargar el XML**, luego
-     avisar a la revisora para que valide por el enlace permanente y, con su
-     visto bueno, publicar y promover a `3-actual/`. Confirmado (correo UCR de CEPAL del
+     `ICR_dist2011-corregido.xml`. Ojo con el editor: en la primera descarga tras
+     guardar, la Provincia (`administrativeArea`) del contacto del metadato
+     venía vacía; el formulario la muestra de forma intermitente y al volver a
+     guardar quedó "San José" (verificado en el registro vivo). Por eso, tras
+     cada guardado, hacer diff completo del XML vivo contra la copia previa.
+     **Pendiente: avisar a la revisora** para que valide por el enlace
+     permanente y, con su visto bueno, publicar y promover a `3-actual/`. Confirmado (correo UCR de CEPAL del
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.

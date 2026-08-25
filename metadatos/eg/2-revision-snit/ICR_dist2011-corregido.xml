@@ -131,7 +131,7 @@
                         <gco:CharacterString>San José</gco:CharacterString>
                       </cit:city>
                       <cit:administrativeArea>
-                        <gco:CharacterString></gco:CharacterString>
+                        <gco:CharacterString>San José</gco:CharacterString>
                       </cit:administrativeArea>
                       <cit:postalCode>
                         <gco:CharacterString>10101</gco:CharacterString>
