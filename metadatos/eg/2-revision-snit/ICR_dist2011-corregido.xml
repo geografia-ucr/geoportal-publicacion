@@ -131,7 +131,7 @@
                         <gco:CharacterString>San José</gco:CharacterString>
                       </cit:city>
                       <cit:administrativeArea>
-                        <gco:CharacterString>San José</gco:CharacterString>
+                        <gco:CharacterString></gco:CharacterString>
                       </cit:administrativeArea>
                       <cit:postalCode>
                         <gco:CharacterString>10101</gco:CharacterString>
@@ -603,7 +603,7 @@ Publicación en el geoportal institucional: Escuela de Geografía de la Universi
             </lan:PT_Locale>
           </mri:defaultLocale>
           <mri:supplementalInformation>
-            <gco:CharacterString>Atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y clasificación del territorio (rural, en transición o urbano). Cubre los 491 distritos de la división distrital de Costa Rica del año 2011, incluida la Isla del Coco.</gco:CharacterString>
+            <gco:CharacterString>Capa vectorial que contiene atributos por distrito: código del distrito según la División Territorial Administrativa, provincia, cantón, distrito, región de planificación, área, valor del ICR 2011 y clasificación del territorio (rural, en transición o urbano). Cubre los 491 distritos de la división distrital de Costa Rica del año 2011, incluida la Isla del Coco.</gco:CharacterString>
           </mri:supplementalInformation>
         </mri:MD_DataIdentification>
       </mdb:identificationInfo>

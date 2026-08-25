@@ -1,6 +1,6 @@
 # Estado del proyecto y pendientes
 
-Actualizado: 2026-08-17.
+Actualizado: 2026-08-25.
 
 ## Estado
 
@@ -9,7 +9,7 @@ Actualizado: 2026-08-17.
 | mocupp-musaceas | 3 | 3 | 3 aprobados | `mocupp-musaceas-v2026.07.22` |
 | mocupp-cafe | 6 | 4 | 4 aprobados (las 2 deshabilitadas no aplican) | `mocupp-cafe-v2026.07.22` |
 | mocupp-pastos | 15 | 5 (nacionales) | 10 Brunca + 5 nacionales **en revisión** | `mocupp-pastos-v2026.07.22` (5 nacionales) |
-| eg | 2 | 1 (ICR; acantilados deshabilitada) | ICR **en revisión** (solicitada por correo al SNIT el 2026-08-17); acantilados **borrador** | `eg-v2026.08.14` (ambas) |
+| eg | 2 | 1 (ICR; acantilados deshabilitada) | ICR **en corrección** (observación del SNIT del 2026-08-25 aplicada; pendiente validación); acantilados **borrador** | `eg-v2026.08.14` (ambas) |
 
 ## Pendientes
 
@@ -59,7 +59,17 @@ Actualizado: 2026-08-17.
      de la otra capa del nodo (acantilados) se enviarían en pocos días.
      Aclaración: lo registrado el 2026-08-11 fue la subida del metadato a la
      herramienta del SNIT; la revisión no había sido solicitada hasta este
-     correo. **Pendiente: observaciones/aprobación de la revisión**. Confirmado (correo UCR de CEPAL del
+     correo. El **2026-08-25 el SNIT devolvió el DOCX revisado** (guardado como
+     `metadatos/eg/2-revision-snit/ICR_dist2011-observaciones.docx`) con una
+     sola observación, en Información suplementaria: anteponer "Capa vectorial
+     que contiene " y pasar "Atributos" a minúscula. Aplicada ese mismo día en
+     el editor del SNIT y verificada contra el registro vivo; copia genuina en
+     `ICR_dist2011-corregido.xml`. Efecto colateral del editor detectado en esa
+     verificación: al guardar se vació la Provincia (`administrativeArea`, era
+     "San José") de la dirección del contacto del metadato (Marco Martínez);
+     **pendiente restaurarla en el editor y volver a descargar el XML**, luego
+     avisar a la revisora para que valide por el enlace permanente y, con su
+     visto bueno, publicar y promover a `3-actual/`. Confirmado (correo UCR de CEPAL del
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.
