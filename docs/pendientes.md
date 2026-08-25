@@ -69,8 +69,10 @@ Actualizado: 2026-08-25.
      venía vacía; el formulario la muestra de forma intermitente y al volver a
      guardar quedó "San José" (verificado en el registro vivo). Por eso, tras
      cada guardado, hacer diff completo del XML vivo contra la copia previa.
-     **Pendiente: avisar a la revisora** para que valide por el enlace
-     permanente y, con su visto bueno, publicar y promover a `3-actual/`. Confirmado (correo UCR de CEPAL del
+     **Aviso enviado a la revisora el 2026-08-25** (correo con el
+     enlace permanente). **Pendiente: su validación**; con el visto bueno,
+     publicar en el SNIT, fusionar/promover a `3-actual/` y poner
+     `metadatos.estado: publicado` y `publicado.snit` en `eg.yml`. Confirmado (correo UCR de CEPAL del
      2025-09-08): el "1er envío_correcciones" fue la entrega definitiva, no hubo
      envíos posteriores de datos; el drive original ya no está disponible, la
      copia local de `datos-fuente/` es la única.
